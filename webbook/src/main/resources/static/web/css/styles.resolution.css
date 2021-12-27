@@ -1,0 +1,117 @@
+@media screen and (min-device-width: 320px)
+{ 
+	body {
+		font-size: 11px;
+		line-height: 1.6em; 
+	}
+	.textlabel
+	{
+		width:100px !important;
+	}
+	#container {
+		padding:0 15px;
+	}
+}
+
+@media (min-width: 992px)
+{
+	body {
+		font-size: 12px;
+		line-height: 1.6em; 
+	}
+	
+	#container {
+		width: 980px;
+	}
+	#mainbanner .mainbaner
+	{
+	  height:396px;
+	  overflow:hidden;
+	}
+	
+	#layoutGroup4
+	{
+		width:725px;
+	}
+	
+	#layoutGroup4 .product_contener
+	{
+		width:25% !important;
+	}
+	
+	#module_loginspecial .field input[type=text],#module_loginspecial  .field input[type=password]
+	{
+		width:250px !important;
+	}
+	
+	#module_loginspecial  .textlabel
+	{
+		width:120px !important;
+	}
+	
+	.product_top_contener .intro
+	{
+		min-width:535px;
+	}
+}
+@media (min-width: 1200px)
+{
+	body {
+		font-size: 13px;
+		line-height: 1.8em; 
+	}
+	#container {
+		width: 1170px;
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-right: auto;
+		margin-left: auto;
+	} 
+	
+	.mainmenu li a
+	{
+	 	font-size:14px !important;
+	}
+	
+	.mainmenu li li a
+	{
+	 	font-size:13px !important;
+	}
+	
+	#header .search
+	{
+	 	width:55% !important;
+	}  
+	#mainbanner .mainbaner
+	{
+		height:388px;
+		overflow:hidden;
+	}
+	#layoutGroup4
+	{
+		width:915px;
+	}
+	#layoutGroup4 .product_contener
+	{
+		width:20% !important;
+	}
+	.block p, .block td
+	{
+		font-size:14px;
+	}
+	#layoutGroup1 .loginsocial
+	{
+		width:26% !important;
+		margin-right:4% !important;
+	}
+	
+	#layoutGroup5 .loginsocial
+	{
+		width:35% !important;
+		margin-right:5% !important;
+	}
+	.product_top_contener .intro
+	{
+		min-width:694px;
+	}
+}

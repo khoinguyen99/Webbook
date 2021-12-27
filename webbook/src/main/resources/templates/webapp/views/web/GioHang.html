@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	
+	  >
+	 	  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico" />
+
+<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"
+	rel="stylesheet" />
+
+<link type="text/css" href="/web/css/styles.resolution.css"
+	rel="stylesheet" />
+
+<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+<script type="text/javascript"
+	src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+<script type='text/javascript'
+	src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+
+<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ 
+
+<link href="/web/css/giohang.css" type="text/css" rel="stylesheet" />
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 
+</head>
+  
+<body>
+     <div th:replace="webapp/common/web/header::header"></div>
+         
+         
+<!--          <table> -->
+<!--          	<tr> -->
+<!--          		<td>Ma Sach</td> -->
+<!--          		<td>Ten Sach</td> -->
+<!--          		<td>So luong sach</td> -->
+<!--          		<td>&nbsp;</td> -->
+<!--          		<td>&nbsp;</td> -->
+<!--          	</tr> -->
+         	
+<!--          	<tr th:each="book: ${books}"> -->
+<!--          		<td th:text="${book.maSach}"></td> -->
+<!--          		<td th:text="${book.tenSach}"></td> -->
+<!--          		<td> -->
+<!--          		<form th:action="@{/GioHang/update}" method="post"> -->
+<!-- 	         		<input type="text" name="bookid" th:value="${book.maSach}" /> -->
+<!-- 	         		<input type="number" th:value="${book.soLuongBan}" name="soluongban" onchange="this.form.submit()" /> -->
+<!--          		 </form> -->
+<!--          		 </td> -->
+<!--          		 <td> -->
+<!--          		  <a th:href="@{'/GioHang/remove/'+${book.maSach}}">Remove</a> -->
+<!--          		 </td> -->
+<!--          	</tr> -->
+         
+<!--          </table> -->
+<!--        <h1 th:text="${counts}"></h1>   -->
+<!--        <h1 th:text="${total}"></h1>    -->
+<!--       <a th:href="@{/GioHang/list}">Back to List</a> -->
+<!--       <a   href="#">Checkout</a> -->
+
+
+
+      <h2 class="text-center">GIỎ HÀNG</h2>
+<div class="container" style="height: 500px"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th style="width:50%">Tên sản phẩm</th> 
+    <th style="width:10%">Giá</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Thành tiền</th> 
+    <th style="width:10%"> </th> 
+   </tr> 
+  </thead> 
+  <tbody>
+  <tr th:each="book: ${books}" > 
+   
+   <td class="Product" > 
+    <div class="row" > 
+      
+     <div class="col-sm-2 hidden-xs"><img th:src="@{'/web/css/Images/ImageBook/'+${book.thumbnail}}" alt="Sản phẩm 1" class="img-responsive" width="100">
+     </div> 
+     <div class="col-sm-10"> 
+      <h4 class="nomargin" th:text="${book.tenSach}"></h4> 
+      <p th:text="'Tác Giả: '+${book.tacGiaEntity.tenTG}"></p> 
+     </div> 
+    </div> 
+   </td> 
+   <td data-th="Price" th:text="${book.donGia} + 'đ'"></td> 
+  
+   
+   <td data-th="Quantity">
+   
+    <form th:action="@{/GioHang/update}" method="post">
+	         		<input type="hidden" name="bookid" th:value="${book.maSach}" />
+	         		<input type="number" class="form-control" th:value="${book.soLuongBan}" name="soluongban" onchange="this.form.submit()" required/>
+        
+    </form>
+   </td> 
+   <td data-th="Subtotal" class="text-center" th:text="${book.donGia}*${book.soLuongBan} + 'đ'" ></td> 
+   <td class="actions">
+    <button class="btn btn-info btn-sm" ><i class="fa fa-edit"></i>
+    </button> 
+    <a  th:href="@{'/GioHang/remove/'+${book.maSach}}"><button class="btn btn-danger btn-sm" ><i class="fa fa-trash-o"></i>
+    </button></a>
+   </td> 
+  </tr> 
+   
+  </tbody>
+  
+  
+  
+  
+  
+  
+  <tfoot> 
+   <tr class="visible-xs"> 
+    <td class="text-center"><strong>Tổng 200.000 đ</strong>
+    </td> 
+   </tr>
+   <tr th:if="${session.count<=0}">
+     <td  style="text-align: right;font-size: 24px">Giỏ hàng trống</td>
+   </tr> 
+   <tr> 
+    <td><a th:href="@{/homepage}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+        
+    </td> 
+    <td colspan="2" class="hidden-xs"> </td> 
+    <td class="hidden-xs text-center"><strong th:text="'Tổng '+${total}+'đ'"></strong>
+    </td> 
+    <td th:if="${session.count>0}"><a href="/GioHang/thanhtoan" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+       
+    </td> 
+   </tr> 
+  </tfoot> 
+ </table>
+</div>
+
+    
+       
+      <div th:replace="webapp/common/web/footer::footer"></div>
+      
+     
+    
+</body>
+</html>

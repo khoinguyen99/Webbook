@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Insert title here</title>
+	
+</head>
+
+<body>
+
+	<div th:fragment="header">
+       
+		<div id="header">
+     
+			<div class="top_header">
+
+				<div id="container">
+					<span class="menumobile" style="font-size:30px;cursor:pointer; display: none;"
+						onclick="openNav()">&#9776;</span>
+					<div class="mainlogo">
+
+						<div class="block banner " id="banner_mainlogo">
+							<div class="blockcontent"><a href="http://localhost:8888/homepage" title="Logo chính"
+									target="_self"><img src="/web/css/Images/slideImage/logo1.png" border="0"
+										title="Logo chính" width="220" height="44"></a></div>
+						</div>
+
+					</div>
+					<div class="car-mb">
+						<a href="/orders/checkout/index.html" title="GIỎ HÀNG CỦA TÔI">
+							<div class="textlable" title="Giỏ hàng">
+								<i class="fa fa-shopping-cart"></i> <span class="shownumber" ></span>
+								
+							</div>
+							
+						</a>
+					</div>
+					<div class="search-mb">
+						<i class="fa fa-search"></i>
+					</div>
+
+                      
+
+					<div class="rightheader">
+
+						<div class="search">
+
+							 <form th:action="@{/homepage/search}" method="post" >
+
+								<table width="100%" cellpadding="0" cellspacing="0">
+
+									<tr>
+
+										<td class="input" width="100%">
+                                                  
+											<input type="text" value="" name="keyword" id="keyword" size="10"
+												class="inputfield" title="Tìm" autocomplete="off"
+												/>
+
+										</td>
+
+										<td class="search-submit" nowrap="nowrap" width="40">
+                                      
+											 <input type="submit" value="Tìm" alt="Tìm">
+
+										
+
+										</td>
+
+									</tr>
+
+								</table>
+
+							</form>
+
+							<div class="autocomplete" id="autocomplete"></div>
+
+						</div>
+
+						<div class="shoptool">
+
+							<ul class="right_topbar">
+
+								<li>
+
+									<div class="textlable" title="Tài khoản của bạn">
+                                       
+                                       <style>
+                                         .dangnhap{
+                                         color: white
+											}
+											.dangnhap:hover{
+                                         color: black;
+											}
+                                       </style>
+                                      <div th:if="${session.nameuser !=null}" >
+                                           
+                                         <i class="fa fa-user" aria-hidden="true"></i> <a th:href="@{/logins}" class="dangnhap" >Xin chào <span th:text="${session.nameuser}">&nbsp;</span> &nbsp;<a style="color:white" th:href="@{/logoutSuccessful}">/Logout</a></a>
+                                        
+                                      </div>  
+                                       <div th:if="${session.nameuser == null}">
+                                           
+                                          <i class="fa fa-user" aria-hidden="true"></i> <a th:href="@{/logins}" class="dangnhap" >Đăng nhập &nbsp;</a> 
+                                        
+                                      </div> 
+									 
+
+									</div>
+
+									
+
+								</li>
+
+								<li>
+
+									<div class="textlable" title="Giỏ hàng" th:if="${session.nameuser != null}">
+
+										Giỏ hàng (<span class="shownumber" th:text="${session.count}">0</span>)
+
+										<i class="fa fa-sort-desc"></i>
+
+									</div>
+
+									<div class="subcontent">
+
+										<h3>Giỏ hàng</h3>
+
+										<div id="cartslist">
+
+										</div>
+										<div class="buttom" id="showcartlink">
+
+											<a class="cartlink" href="/GioHang/donhang"
+												title="GIỎ HÀNG CỦA TÔI">
+
+												Đơn Hàng&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a>
+
+										</div>
+										<div class="buttom" id="showcartlink">
+
+											<a class="cartlink" href="/GioHang/lists"
+												title="GIỎ HÀNG CỦA TÔI">
+
+												Xem giỏ hàng<i class="fa fa-play"></i></a>
+
+										</div>
+
+									</div>
+
+								</li>
+
+							</ul>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="mainmenu">
+
+				<div id="container">
+
+					<div class="mainmenu_contener">
+
+						<div class="mainmenu">
+
+							<span class="while"></span>
+
+							<span>
+							
+								<h2><i class="fa fa-bars"></i>Danh mục sản phẩm</h2>
+							</span>
+							<ul class="submenu0" id="submenu0">
+								<li class="group"><a href="javascript:" class="havechild" 4>Nổi bật</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/sach-ban-chay.html" target="_self">Sách bán chạy</a></li>
+										<li><a href="/sach-moi.html" target="_self">Sách mới</a></li>
+										<li><a href="/sach-sap-phat-hanh.html" target="_self">Sắp phát hành</a></li>
+										<li><a href="/sach-giam-gia.html" target="_self">Sách giảm giá</a></li>
+									</ul>
+								</li>
+								<li><a href="/homepage/danhmuc/1" class="havechild" 8 target="_self">Sách kinh
+										tế</a>
+									<ul class="submenu1" id="submenu1" >
+<li th:each="chude: ${chudes}" th:if="${chude.theloaiEntity.id}==1"><a th:href="@{/homepage/chude/{id}/{ids}(id=${chude.theloaiEntity.id},ids=${chude.id})}" th:text="${chude.name}"  target="_self" ></a></li>								 
+										
+									</ul>
+								</li>
+								<li><a href="/homepage/danhmuc/2" class="havechild" 9 target="_self">Văn
+										học nước ngoài</a>
+									<ul class="submenu1" id="submenu1">
+<li th:each="chude: ${chudes}" th:if="${chude.theloaiEntity.id}==2"><a th:href="@{/homepage/chude/{id}/{ids}(id=${chude.theloaiEntity.id},ids=${chude.id})}" th:text="${chude.name}"  target="_self" ></a></li>								 
+									</ul>
+								</li>
+								<li><a href="/danh-muc/3/van-hoc-trong-nuoc.html" class="havechild" 6 target="_self">Văn
+										học trong nước</a>
+									<ul class="submenu1" id="submenu1">
+											<li th:each="chude: ${chudes}" th:if="${chude.theloaiEntity.id}==3"><a th:href="@{/homepage/chude/{id}(id=${chude.theloaiEntity.id})}" th:text="${chude.name}"  target="_self" ></a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/4/sach-ki-nang-song.html" class="havechild" 2 target="_self">Sách
+										kĩ năng sống</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/41/ky-nang-song.html" target="_self">Kỹ năng sống</a>
+										</li>
+										<li><a href="/danh-muc/56/nghe-thuat-song-dep.html" target="_self">Nghệ thuật
+												sống đẹp</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/5/sach-tuoi-teen.html" class="havechild" 4 target="_self">Sách
+										tuổi teen</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/30/van-hoc-teen.html" target="_self">Văn học teen</a>
+										</li>
+										<li><a href="/danh-muc/29/huong-nghiep-ky-nang.html" target="_self">Hướng nghiệp
+												- kỹ năng</a></li>
+										<li><a href="/danh-muc/64/light-novel.html" target="_self">Light Novel</a></li>
+										<li><a href="/danh-muc/69/truyen-tranh-comic.html" target="_self">Truyện tranh,
+												Comic</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/6/hoc-ngoai-ngu.html" class="havechild" 4 target="_self">Học
+										ngoại ngữ</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/47/tu-dien.html" target="_self">Từ điển</a></li>
+										<li><a href="/danh-muc/48/sach-hoc-tieng-anh.html" target="_self">Sách học tiếng
+												Anh</a></li>
+										<li><a href="/danh-muc/50/sach-hoc-tieng-hoa.html" target="_self">Sách học tiếng
+												Hoa</a></li>
+										<li><a href="/danh-muc/49/sach-hoc-tieng-nhat.html" target="_self">Sách học
+												tiếng Nhật</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/7/sach-thieu-nhi.html" class="havechild" 5 target="_self">Sách
+										thiếu nhi</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/31/truyen-co-tich-than-thoai.html" target="_self">Truyện
+												cổ tích - Thần thoại</a></li>
+										<li><a href="/danh-muc/33/vua-hoc-vua-choi.html" target="_self">Vừa học vừa
+												chơi</a></li>
+										<li><a href="/danh-muc/32/kien-thuc-ki-nang.html" target="_self">Kiến thức - Kĩ
+												năng</a></li>
+										<li><a href="/danh-muc/7/van-hoc.html" target="_self">Văn học</a></li>
+										<li><a href="/truyen-ke-cho-be.html" target="">Truyện kể cho bé</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/8/thuong-thuc-doi-song.html" class="havechild" 5
+										target="_self">Thương thức đời sống</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/53/van-hoa-du-lich.html" target="_self">Văn hóa - Du
+												lịch</a></li>
+										<li><a href="/danh-muc/42/cham-soc-suc-khoe.html" target="_self">Chăm sóc sức
+												khỏe</a></li>
+										<li><a href="/danh-muc/45/phong-thuy-nha-cua.html" target="_self">Phong thủy -
+												Nhà cửa</a></li>
+										<li><a href="/danh-muc/43/nau-an.html" target="_self">Nấu ăn</a></li>
+										<li><a href="/danh-muc/55/the-thao-giai-tri.html" target="_self">Thể thao - Giải
+												trí</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/9/sach-chuyen-nganh.html" class="havechild" 10
+										target="_self">Sách chuyên ngành</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/36/giao-duc.html" target="_self">Giáo dục</a></li>
+										<li><a href="/danh-muc/35/cong-nghe-thong-tin.html" target="_self">Công nghệ
+												thông tin</a></li>
+										<li><a href="/danh-muc/38/lich-su-dia-ly.html" target="_self">Lịch sử - Địa
+												lý</a></li>
+										<li><a href="/danh-muc/37/khoa-hoc-tu-nhien.html" target="_self">Khoa học tự
+												nhiên</a></li>
+										<li><a href="/danh-muc/39/my-thuat-kien-truc.html" target="_self">Mỹ thuật -
+												Kiến trúc</a></li>
+										<li><a href="/danh-muc/34/chinh-tri-triet-hoc.html" target="_self">Chính trị -
+												Triết học</a></li>
+										<li><a href="/danh-muc/9/danh-nhan-nguoi-noi-tieng.html" target="_self">Danh
+												nhân - Người nổi tiếng</a></li>
+										<li><a href="/danh-muc/9/tam-linh-ton-giao.html" target="_self">Tâm linh - Tôn
+												giáo</a></li>
+										<li><a href="/danh-muc/40/y-duoc.html" target="_self">Y dược</a></li>
+										<li><a href="/danh-muc/9/khoa-hoc-xa-hoi.html" target="_self">Khoa học xã
+												hội</a></li>
+									</ul>
+								</li>
+								<li><a href="/danh-muc/51/van-phong-pham-qua-tang.html" class="havechild" 3
+										target="_self">Văn Phòng Phẩm - Quà Tặng</a>
+									<ul class="submenu1" id="submenu1">
+										<li><a href="/danh-muc/70/bop-viet-hop-but.html" target="_self">Bóp Viết - Hộp
+												Bút</a></li>
+										<li><a href="/danh-muc/71/binh-nuoc-binh-giu-nhiet.html" target="_self">Bình
+												Nước, Bình Giữ Nhiệt</a></li>
+										<li><a href="/danh-muc/72/phu-kien-qua-tang.html" target="_self">Phụ Kiện, Quà
+												Tặng</a></li>
+									</ul>
+								</li>
+								<li class="-bold"><a href="/Cong-ty-phat-hanh.html" class="havechild" target="_self">Công ty phát hành</a>
+									<ul class="submenubig" id="submenu1">
+										<li class="-bold"><a href="/thuong-hieu/4/thai-ha.html">Thái Hà</a></li>
+										<li class="-bold"><a href="/thuong-hieu/6/bach-viet.html">Bách Việt</a></li>
+										<li class="-bold"><a href="/thuong-hieu/33/alphabooks.html">Alphabooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/34/nha-nam.html">Nhã Nam</a></li>
+										<li class="-bold"><a href="/thuong-hieu/35/owlbooks.html">Owlbooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/36/cam-phong.html">Cẩm Phong</a></li>
+										<li class="-bold"><a href="/thuong-hieu/37/quang-van.html">Quảng Văn</a></li>
+										<li class="-bold"><a href="/thuong-hieu/38/van-viet.html">Văn Việt</a></li>
+										<li class="-bold"><a href="/thuong-hieu/39/limbooks.html">Limbooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/40/skybooks.html">Skybooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/41/asbooks.html">Asbooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/42/amak.html">Amak</a></li>
+										<li class="-bold"><a href="/thuong-hieu/43/dinh-ti.html">Đinh Tị</a></li>
+										<li class="-bold"><a href="/thuong-hieu/44/pavicobooks.html">Pavicobooks</a></li>
+										<li class="-bold"><a href="/thuong-hieu/45/phuong-nam.html">Phương Nam</a></li>
+										<li class="-bold"><a href="/thuong-hieu/46/dong-a.html">Đông A</a></li>
+										<li class="-bold"><a href="/thuong-hieu/47/van-lang.html">Văn Lang</a></li>
+										<li class="-bold"><a href="/thuong-hieu/48/nguoi-tre-viet.html">Người Trẻ Việt</a></li>
+										<li class="-bold"><a href="/thuong-hieu/49/lantabra.html">Lantabra</a></li>
+										<li class="-bold"><a href="/thuong-hieu/50/nxb-kim-dong.html">NXB Kim Đồng</a></li>
+										<li class="-bold"><a href="/thuong-hieu/51/nxb-tre.html">NXB Trẻ</a></li>
+										<li class="publishmore"><a href="/Cong-ty-phat-hanh.html">Tất cả công ty phát hành</a></li>
+									</ul>
+								</li>
+							</ul>
+
+
+						</div>
+
+						<div class="hotline">
+
+							<div class="block " id="content_SupportOnline">
+								<div class="blockcontent">
+									<div>
+										<strong><span style="color:#000000;"><span
+													style="font-size:14px;">Hotline:&nbsp;</span></span></strong><span
+											style="color:#ff0000;"><b
+												style="box-sizing: border-box; color: rgb(0, 204, 102); font-family: Verdana, Arial, Helvetica, sans-serif;">0938
+												424 289</b></span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+                   
+					<div class="clear"></div>
+
+				</div>
+
+			</div>
+
+		</div>
+ 
+
+	</div>
+	
+	<div layout:fragment="chude">
+
+	</div>
+
+
+</body>
+
+</html>

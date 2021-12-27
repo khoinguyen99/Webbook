@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{webapp/common/web/header.html}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico" />
+
+<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"
+	rel="stylesheet" />
+
+<link type="text/css" href="/web/css/styles.resolution.css"
+	rel="stylesheet" />
+
+<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+<script type="text/javascript"
+	src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+<script type='text/javascript'
+	src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+
+<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+
+
+<link href="/web/css/formthanhtoan.css" type="text/css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<div layout:fragment="chude">
+
+
+
+
+    <!--&lt;!&ndash; &lt;!&ndash;   	    <div th:if="${message != null}"> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;             <span th:text="${message}"></span> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;         </div> &ndash;&gt; -->
+    <!--&lt;!&ndash;         <form th:action="@{/GioHang/saveOrUpdate}" th:object="${orders}" method="post" enctype="multipart/form-data"> &ndash;&gt;-->
+    <!--&lt;!&ndash; &lt;!&ndash;             Department: &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;             <select th:field="*{makh}"> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;                 <option th:each="person : ${persons}" th:value="${person.id}" th:text="${person.name}"></option> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;             </select> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;               <span th:if="${#fields.hasErrors('departId')}" th:errors="*{departId}">Empty DepartID</span> &ndash;&gt;-->
+    <!--            -->
+    <!--&lt;!&ndash;             <br /> &ndash;&gt;-->
+
+    <!--&lt;!&ndash;             Ho va ten : &ndash;&gt;-->
+    <!--&lt;!&ndash;             <input type="text" th:field="*{tenKH}" /><br /> &ndash;&gt;-->
+    <!--&lt;!&ndash; &lt;!&ndash;             <span th:if="${#fields.hasErrors('tenKH')}" th:errors="*{tenKH}">Empty Name</span> &ndash;&gt;-->
+    <!--&lt;!&ndash;             Photo: &ndash;&gt;-->
+    <!--&lt;!&ndash;             <input type="number" th:field="*{soDT}" /><br /> &ndash;&gt;-->
+    <!--&lt;!&ndash; &lt;!&ndash;              <span th:if="${#fields.hasErrors('soDT')}" th:errors="*{soDT}">Empty Image</span> &ndash;&gt; -->
+    <!--&lt;!&ndash;             Dia chi &ndash;&gt;-->
+    <!--&lt;!&ndash;             <input type="text" th:field="*{diachi}" /><br /> &ndash;&gt;-->
+    <!--&lt;!&ndash; &lt;!&ndash;              <span th:if="${#fields.hasErrors('diachi')}" th:errors="*{diachi}">Empty birthday</span> &ndash;&gt; -->
+    <!--&lt;!&ndash;             <input type="submit" value="ADD" /><br /> &ndash;&gt;-->
+    <!--&lt;!&ndash;         </form> &ndash;&gt;-->
+    <!--        -->
+    <!--&lt;!&ndash;         <hr/> &ndash;&gt;-->
+    <!--&lt;!&ndash;         <h4>Error:</h4> &ndash;&gt;-->
+    <!--&lt;!&ndash; &lt;!&ndash;         <ul th:if="${#fields.hasErrors('${staffDto.*}')}"> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;           <li th:each="err : ${#fields.errors('${staffDto.*}')}" th:text="${err}"> &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;           Input is incorrect &ndash;&gt; -->
+    <!--&lt;!&ndash; &lt;!&ndash;           </li> &ndash;&gt; -->
+    <!--        -->
+    <!--&lt;!&ndash; &lt;!&ndash;         </ul> &ndash;&gt; -->
+
+
+    <div class="container">
+        <div class="title">
+            <h2 style="display: inline;margin-right: 100px">Địa chỉ giao hàng</h2>
+            
+
+        </div>
+        <div class="d-flex">
+            <form th:action="@{/GioHang/saveOrUpdate}" th:object="${orders}" method="post" enctype="multipart/form-data" >
+                <div >
+                      <div style="display: inline-table; width: 60%">
+                       <label>
+                       
+                        <span class="fname" >Họ và tên<span class="required">*</span></span>
+                        <input type="text" id="name" name="fname" style="color: black;"  placeholder="nhập họ và tên ..." th:field="*{tenKH}" required/>
+                    </label>
+                    <label>
+                        <span class="lname">Số điện thoại<span class="required">*</span></span>
+                        <input type="text" name="lname" id="sodt" maxlength="9"  oninvalid="this.setCustomValidity('Số được thoại không được bỏ trống và không xuất hiện chữ')" oninput="this.setCustomValidity('')" style="padding: 5px;width: 351px;color: black" placeholder="nhập số điện thoại..." pattern="[0-9]{9}" th:field="*{soDT}" required/>
+                    </label>
+                    <label th:if="${session.nameuser != null}">
+                        <span>Email</span>
+                        <input type="email" style="color: black;" id="mail" placeholder="nhập email..." name="cn" th:field="*{email}" required/>
+                    </label>
+                    
+                         
+                    <label>
+                        <span>Tỉnh/Thành Phố <span class="required">*</span></span>
+                        <select name="selection" id="dropDownId" th:field="*{tinhTP}"  required>
+                            <option value="select">Chọn tỉnh thành phố...</option>
+                            <option value="Thành phố Hà Nội">Thành phố Hà Nội</option>
+
+                            <option value="Tỉnh Hà Giang">Tỉnh Hà Giang</option>
+
+                            <option value="Tỉnh Cao Bằng">Tỉnh Cao Bằng</option>
+
+                            <option value="Tỉnh Bắc Kạn">Tỉnh Bắc Kạn</option>
+
+                            <option value="Tỉnh Tuyên Quang">Tỉnh Tuyên Quang</option>
+
+                            <option value="Tỉnh Lào Cai">Tỉnh Lào Cai</option>
+
+                            <option value="Tỉnh Điện Biên">Tỉnh Điện Biên</option>
+
+                            <option value="Tỉnh Lai Châu">Tỉnh Lai Châu</option>
+
+                            <option value="Tỉnh Sơn La">Tỉnh Sơn La</option>
+
+                            <option value="Tỉnh Yên Bái">Tỉnh Yên Bái</option>
+
+                            <option value="Tỉnh Hoà Bình">Tỉnh Hoà Bình</option>
+
+                            <option value="Tỉnh Thái Nguyên">Tỉnh Thái Nguyên</option>
+
+                            <option value="Tỉnh Lạng Sơn">Tỉnh Lạng Sơn</option>
+
+                            <option value="Tỉnh Quảng Ninh">Tỉnh Quảng Ninh</option>
+
+                            <option value="Tỉnh Bắc Giang">Tỉnh Bắc Giang</option>
+
+                            <option value="Tỉnh Phú Thọ">Tỉnh Phú Thọ</option>
+
+                            <option value="Tỉnh Vĩnh Phúc">Tỉnh Vĩnh Phúc</option>
+
+                            <option value="Tỉnh Bắc Ninh">Tỉnh Bắc Ninh</option>
+
+                            <option value="Tỉnh Hải Dương">Tỉnh Hải Dương</option>
+
+                            <option value="Thành phố Hải Phòng">Thành phố Hải Phòng</option>
+
+                            <option value="Tỉnh Hưng Yên">Tỉnh Hưng Yên</option>
+
+                            <option value="Tỉnh Thái Bình">Tỉnh Thái Bình</option>
+
+                            <option value="Tỉnh Hà Nam">Tỉnh Hà Nam</option>
+
+                            <option value="Tỉnh Nam Định">Tỉnh Nam Định</option>
+
+                            <option value="Tỉnh Ninh Bình">Tỉnh Ninh Bình</option>
+
+                            <option value="Tỉnh Thanh Hóa">Tỉnh Thanh Hóa</option>
+
+                            <option value="Tỉnh Nghệ An">Tỉnh Nghệ An</option>
+
+                            <option value="Tỉnh Hà Tĩnh">Tỉnh Hà Tĩnh</option>
+
+                            <option value="Tỉnh Quảng Bình">Tỉnh Quảng Bình</option>
+
+                            <option value="Tỉnh Quảng Trị">Tỉnh Quảng Trị</option>
+
+                            <option value="Tỉnh Thừa Thiên Huế">Tỉnh Thừa Thiên Huế</option>
+
+                            <option value="Thành phố Đà Nẵng">Thành phố Đà Nẵng</option>
+
+                            <option value="Tỉnh Quảng Nam">Tỉnh Quảng Nam</option>
+
+                            <option value="Tỉnh Quảng Ngãi">Tỉnh Quảng Ngãi</option>
+
+                            <option value="Tỉnh Bình Định">Tỉnh Bình Định</option>
+
+                            <option value="Tỉnh Phú Yên">Tỉnh Phú Yên</option>
+
+                            <option value="Tỉnh Khánh Hòa">Tỉnh Khánh Hòa</option>
+
+                            <option value="Tỉnh Ninh Thuận">Tỉnh Ninh Thuận</option>
+
+                            <option value="Tỉnh Bình Thuận">Tỉnh Bình Thuận</option>
+
+                            <option value="Tỉnh Kon Tum">Tỉnh Kon Tum</option>
+
+                            <option value="Tỉnh Gia Lai">Tỉnh Gia Lai</option>
+
+                            <option value="Tỉnh Đắk Lắk">Tỉnh Đắk Lắk</option>
+
+                            <option value="Tỉnh Đắk Nông">Tỉnh Đắk Nông</option>
+
+                            <option value="Tỉnh Lâm Đồng">Tỉnh Lâm Đồng</option>
+
+                            <option value="Tỉnh Bình Phước">Tỉnh Bình Phước</option>
+
+                            <option value="Tỉnh Tây Ninh">Tỉnh Tây Ninh</option>
+
+                            <option value="74">Tỉnh Bình Dương</option>
+
+                            <option value="75">Tỉnh Đồng Nai</option>
+
+                            <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
+
+                            <option value="79">Thành phố Hồ Chí Minh</option>
+
+                            <option value="80">Tỉnh Long An</option>
+
+                            <option value="82">Tỉnh Tiền Giang</option>
+
+                            <option value="83">Tỉnh Bến Tre</option>
+
+                            <option value="84">Tỉnh Trà Vinh</option>
+
+                            <option value="86">Tỉnh Vĩnh Long</option>
+
+                            <option value="87">Tỉnh Đồng Tháp</option>
+
+                            <option value="89">Tỉnh An Giang</option>
+
+                            <option value="91">Tỉnh Kiên Giang</option>
+
+                            <option value="92">Thành phố Cần Thơ</option>
+
+                            <option value="93">Tỉnh Hậu Giang</option>
+
+                            <option value="94">Tỉnh Sóc Trăng</option>
+
+                            <option value="95">Tỉnh Bạc Liêu</option>
+
+                            <option value="96">Tỉnh Cà Mau</option>
+                        </select>
+                    </label>
+
+
+                    <label>
+                        <span>Địa Chỉ <span class="required">*</span></span>
+                        <textarea rows="" id="diac" cols="" placeholder="nhập địa chỉ..."  style="margin: 0px; height: 72px; width: 350px;color: black;" th:field="*{diachi}" required></textarea>
+                    </label>
+                    </div>
+                    
+                    <div style="display: inline-table;">
+                       <table>
+                        
+                            
+                        <tr>
+                            <th colspan="2">Đơn hàng</th>
+                        </tr>
+                        <tr th:each="book: ${bookorders}">
+                            <td th:text=" ${book.soLuongBan}  +' ✖️ '+${book.tenSach}"></td>
+                            <td th:text="${book.donGia}*${book.soLuongBan} + 'đ'" ></td>
+                        </tr>
+                       
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Free shipping</td>
+                        </tr>
+                        <tr>
+                            <td th:text="'Tổng '+${total}+'đ'"></td>
+                            
+                        </tr>
+                    </table><br>
+                      
+                    
+                    </div>
+                </div>
+              
+
+                <div class="Yorder">
+
+                   
+                    <div>
+                        <input type="radio" name="dbt" value="dbt" checked> Chuyển khoản trực tiếp
+                    </div>
+                    <p>
+                        Thực hiện thanh toán của bạn trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn đặt hàng của bạn làm tham chiếu thanh toán. Đơn đặt hàng của bạn sẽ không được chuyển cho đến khi tiền đã hết trong tài khoản của chúng tôi.
+                    </p>
+                    <div>
+                        <input type="radio" name="dbt" value="cd"> Thanh toán khi giao hàng
+                    </div>
+                    <div>
+                        <input type="radio" name="dbt" value="cd"> Paypal <span>
+      <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg" alt="" width="50">
+      </span>
+                    </div>
+                  <a th:href="@{/GioHang/thankyou}" th:each="bookorder,state: ${bookorders}"><button type="submit" th:if="${state.size>0}">Đặt Mua</button></a>
+                   <a th:href="@{/GioHang/thankyou}" th:each="bookorder,state: ${bookorders}"><button type="submit" th:if="${state.count<=0}">Tiếp tục mua hàng</button></a>
+                </div>
+            </form>
+        </div>
+         
+           
+           
+    </div>
+
+
+</div>
+ <div th:replace="webapp/common/web/footer::footer"></div>
+</body>
+</html>

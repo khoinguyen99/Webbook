@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico" />
+
+<link type="text/css" th:href="@{/web/css/styles.css}" rel="stylesheet" />
+
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"
+	rel="stylesheet" />
+
+<link type="text/css" href="/web/css/styles.resolution.css"
+	rel="stylesheet" />
+
+<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+<script type="text/javascript"
+	src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+<script type='text/javascript'
+	src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+
+<link th:href="@{/web/css/products.css}" type="text/css" rel="stylesheet" />
+
+<link type="text/css" th:href="@{/web/css/formpay2.css}"  rel="stylesheet" />
+
+
+<!-- <link type="text/css" href="/web/css/formpay.css"  rel="stylesheet" /> -->
+
+</head>
+<body>
+<div th:replace="webapp/common/web/header::header"></div>
+    
+  <div id="container">
+    <div class="product_view_contener" th:each="detail: ${detailss}">
+    
+	<div class="showleft">
+        <div class="product_info">
+            <h1 th:text=${detail.tenSach}></h1>
+            <div class="groups">
+                <div class="viewfields">
+                     <span>Tác giả: <a  th:text="${detail.tacGiaEntity.tenTG}"></a></span> <span>Phát hành: <a href="/thuong-hieu/376/dtbooks.html" th:text="${detail.thuongHieuEntity.tenTH}"></a></span>
+                </div>
+                <div class="booktype_contener"><div class="booktype_left">Hình thức:</div><div class="booktype  first">
+    <a href="#" th:title="${detail.donViTinh}" th:text="${detail.donViTinh}"></a>
+</div><div class="clear"></div></div>
+                <div class="clear"></div>
+            </div>
+            
+                     
+            <div class="prices_contener">
+                <div class="prices">
+                    <div class="saleprice">
+                        <span id="saleprice" th:text="${detail.donGia}+'₫'" ></span>
+                    </div>
+                    <div class="vrootprice" id="rootprice" >Giá bìa: <span>139.000 ₫</span></div>
+                    <div class="yousave" id="yousave">Tiết kiệm: <span>27.800 ₫ (-20%)</span></div>
+                </div>
+                <style>
+                
+                .hethang{
+						    background-color: darkgray;
+						}
+						
+				.hethang:hover
+				{
+				
+				   background-color: darkgray;
+				}		
+				
+                </style>
+                <div class="goshop">
+            		<a   th:href="@{/GioHang/add/{bookid}(bookid=${detail.maSach})}" >Mua ngay</a>
+<!--             		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Mùa Hàng</button> -->
+            		<a  class="hethang" th:if="${detail.soLuongSach <= 0}" >Hết Hàng</a>
+           		 </div>
+                 <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            
+            
+            <div class="clear"></div>
+            <div class="intro">
+                <div class="block " id="content_ViewProducts"><div class="blockcontent"><p>
+	<i class="fa fa-check"></i><span style="font-size:14px;">Bọc Plastic miễn phí&nbsp;</span></p>
+<p>
+	<i class="fa fa-check"></i><span style="font-size:14px;">Giao hàng miễn phí trong nội thành TP. HCM với đơn hàng&nbsp; <span style="color:#33cc33;"><strong>≥ 150.000 đ</strong></span></span></p>
+<p>
+	<i class="fa fa-check"></i><span style="font-size:14px;">Giao hàng miễn phí toàn quốc với đơn hàng <span style="color:#33cc33;"><strong>≥ 250.000 đ</strong></span></span></p>
+</div></div>
+            </div>
+            <div class="clear"></div>
+            <div class="fb-like fb_iframe_widget" data-href="https://nobita.vn/2021/khách-hàng-là-mọt-mói-quan-hẹ-khong-phải-mọt-giao-dịch.html" data-layout="standard" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=368970956612542&amp;container_width=820&amp;href=https%3A%2F%2Fnobita.vn%2F2021%2Fkha%25CC%2581ch-ha%25CC%2580ng-la%25CC%2580-mo%25CC%25A3t-mo%25CC%2581i-quan-he%25CC%25A3-khong-pha%25CC%2589i-mo%25CC%25A3t-giao-di%25CC%25A3ch.html&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f524459fa68b3c" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.1/plugins/like.php?action=like&amp;app_id=368970956612542&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df310b9175bd5b4c%26domain%3Dnobita.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fnobita.vn%252Ff3bfc9402143418%26relation%3Dparent.parent&amp;container_width=820&amp;href=https%3A%2F%2Fnobita.vn%2F2021%2Fkha%25CC%2581ch-ha%25CC%2580ng-la%25CC%2580-mo%25CC%25A3t-mo%25CC%2581i-quan-he%25CC%25A3-khong-pha%25CC%2589i-mo%25CC%25A3t-giao-di%25CC%25A3ch.html&amp;layout=standard&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 0px; height: 0px;" class=""></iframe></span></div>
+        </div>
+    </div>
+    <div class="image_contenner">
+        <div class="mainimage">
+		<img th:src="@{'/web/css/Images/ImageBook/'+${detail.thumbnail}}" alt="Khách Hàng " id="mainimage" width="250" data-pagespeed-url-hash="1383866880" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+        
+        </div>
+	    <div class="subthums" id="gallery_01">
+    	    
+        </div>
+    </div>
+    <hr/>
+    
+    <div class="clear"></div>
+    
+    <div th:utext="${detailsss}"></div>
+	
+   <script>var contentid=$('#contentid');var hieght=contentid.height();$('#viewmore').hide();if(hieght>400){contentid.addClass('collapse');$('#viewmore').show();}$('.viewmore').click(function(){if(contentid.hasClass('collapse')){contentid.removeClass('collapse');$('#viewmore span').empty();$('#viewmore span').append('Thu gọn <i class="fa fa-sort-asc"></i>');}else{contentid.addClass('collapse');$('#viewmore span').empty();$('#viewmore span').append('Xem thêm nội dung <i class="fa fa-sort-desc"></i>');}});</script>
+
+
+ <div class="clear"></div>
+
+<h3>Thông Tin Chi Tiết</h3>
+<hr/>
+
+
+<style>
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+.customtable
+{
+    width:100%;
+    font-size: 14px;
+    line-height: 1.8em;
+    font-family: Arial, Helvetica, sans-serif;
+    font: 100% Arial,Helvetica,sans-serif;
+    border:1px solid #ddd;
+    
+}
+
+</style>
+<table cellpadding="10" cellspacing="0" class="customtable"  border="1px solid #ddd">
+	<tbody>
+		<tr>
+			<td><a href="#" title="Tác giả">Tác giả</a></td>
+			<td><a href="#" title="Trịnh Minh Thảo">[[${detail.tacGiaEntity.tenTG}]]</a></td>
+		</tr>
+		<tr>
+			<td><a href="#" title="Phát hành">Phát hành</a></td>
+			<td><a href="#" title="Dtbooks">[[${detail.thuongHieuEntity.tenTH}]]</a></td>
+		</tr>
+		<tr>
+			<td><a href="#" title="NXB">NXB</a></td>
+			<td>[[${detail.nhaxuatbanEntity.tenNXBS}]]</td>
+		</tr>
+		<tr>
+			<td>Số trang</td>
+			<td>248</td>
+		</tr>
+		<tr>
+			<td>Kích thước</td>
+			<td>[[${detail.kichThuoc}]]</td>
+		</tr>
+		<tr>
+			<td>Trọng lượng</td>
+			<td>320</td>
+		</tr>
+		<tr>
+			<td>Lượt xem</td>
+			<td>1956</td>
+		</tr>
+		<tr>
+			<td>Ngày cập nhật</td>
+			<td>[[${detail.ngaycapnhat}]]</td>
+		</tr>
+		<tr>
+			<td>Danh mục</td>
+			<td><a href="#" title="Tài chính - Kế toán">[[${detail.categoryEntity.name}]]</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="goshop cfields">
+        <a th:if="${detail.soLuongSach > 0}" th:href="@{/GioHang/add/{bookid}(bookid=${detail.maSach})}">Mua ngay</a>
+    
+     </div>
+
+  
+<!--  ProductPay -->
+
+</div>
+
+
+  </div>
+
+
+	
+
+			<div class="clear"></div>
+
+ <div th:replace="webapp/common/web/footer::footer"></div>
+
+
+
+</body>
+</html>

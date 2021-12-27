@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{webapp/decorator/admin.html}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="/admin/css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous" type="text/javascript"></script>
+         <script src="/admin/js/datatables-simple-demo.js" type="text/javascript"></script>
+          <script src="/admin/js/scripts.js" type="text/javascript"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+<title>Insert title here</title>
+
+</head>
+<body>
+    
+    
+      <div layout:fragment="addbook">
+<style>
+
+   body{
+     background-image: url("/admin/assets/img/halloween_2021_by_unidcolor_detsg3g.jpg") !important;
+     
+   }
+   label
+   {
+      color: white;
+   }
+  .containers
+  {
+    
+    width: 89%; 
+    margin-left: 69px; 
+    line-height: 3.0;   
+      
+  }
+  #output
+  {
+     width: 100px; 
+     height: 100px; 
+     border-color: black;
+    
+  }
+  .cc
+  {  
+     display: inline-block;
+     color: white;
+     opacity: 0
+  }
+  #button
+  {  
+     padding: 5px;
+     background-color: aliceblue;
+     border: 2px;
+  }
+ 
+</style>                    
+          <div class="containers" > 
+          
+           <form th:action="@{/admin/pageUpdate}" th:object="${books}" method="post"  enctype="multipart/form-data">     
+                 <label>Tên sách</label>
+                <input type="text" th:field="*{tenSach}" class ="form-control" required />   
+                 <br/>                 
+                
+				 <a id='button'>Select File Image</a>
+                 <input id='val' th:field="*{thumbnail}"></input>
+ 			     <img id="output"/> 
+ 			     <input type="file"  onchange="loadFile(event)" class ="cc" /> 
+ 			     <script>
+ 			     
+ 			    $('#button').click(function(){
+ 			       $("input[type='file']").trigger('click');
+ 			    })
+
+ 			    $("input[type='file']").change(function(){
+ 			       $('#val').val(this.value.replace(/C:\\fakepath\\/i, ''))
+ 			    })   
+
+ 			    var loadFile = function(event) {
+ 			       					    var output = document.getElementById('output');
+ 			     					    output.src = URL.createObjectURL(event.target.files[0]);
+ 			      					    output.onload = function() {
+ 			       					      URL.revokeObjectURL(output.src) // free memory
+ 			     					    }
+ 			     					  }
+ 			     
+ 			     </script>
+                
+                
+                <br/>
+                  <label>shortDescription</label>
+				<textarea name="content" id="content" class ="form-control" th:field="*{shortDescription}" required></textarea>
+                  <label>Mô tả</label>
+                <textarea rows="5" cols="" class ="form-control" th:field="*{moTa}" required></textarea>
+                  <label>Đơn giá</label>
+                <input type="text" class ="form-control" th:field="*{donGia}" required/>
+                <label>Số lượng</label>
+                <input type="number" class ="form-control" th:field="*{soLuongSach}" required/>               
+                <label>Mã giảm giá</label>
+                <input type="text" class ="form-control" th:field="*{maGiamGia}" required/>
+                  <label>Kích thước</label>
+                <input type="text" class ="form-control" th:field="*{kichThuoc}" required/>
+                  <label>Kiếu Sách</label>
+                <input type="text" class ="form-control" th:field="*{donViTinh}" required/>
+                  <label>Ngày cập nhập</label>
+                <input type="date" name="ngaycn" class ="form-control"  required/>
+                <label>Thương hiệu</label>               
+                <input type="text" class ="form-control" name="tenth" required/>
+                <label>Tác giả</label>
+                <input type="text" class ="form-control" name="tentg"   required/>
+                <label>Nhà xuất bản</label>
+                <input type="text" class ="form-control" name="tennxb"   required />
+                <label>Chủ đề sách</label>
+                <input type="text" class ="form-control" name="tencd"   required /><br/>
+                  
+               <label>Thể loại sách</label>
+               <input type="text" class ="form-control" name="tentl"   required /><br/>
+                
+               <input style="margin-left: 42%" type="submit" value="Add Book" class="btn btn-primary"  /> 
+               
+             </form>       
+                </form>       
+              </div>   
+                               
+	              
+	                
+	                
+	<script src="/ckeditor/ckeditor.js"></script>
+	<script src="/ckfinder/ckfinder.js"></script>
+	<script>
+		CKEDITOR
+				.replace(
+						'content',
+						{
+							filebrowserBrowseUrl : '/ckfinder/ckfinder.html',
+							filebrowserImageBrowseUrl : '/ckfinder/ckfinder.html?type=Images',
+							filebrowserFlashBrowseUrl : '/ckfinder/ckfinder.html?type=Flash',
+							filebrowserUploadUrl : '/ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Files',
+							filebrowserImageUploadUrl : '/ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Images',
+							filebrowserFlashUploadUrl : '/ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Flash'
+						});
+		/*Avatar start*/
+		function BrowseServer(startupPath, functionData) {
+			// You can use the "CKFinder" class to render CKFinder in a page:
+			var finder = new CKFinder();
+
+			// The path for the installation of CKFinder (default = "/ckfinder/").
+			finder.basePath = '../';
+
+			//Startup path in a form: "Type:/path/to/directory/"
+			finder.startupPath = startupPath;
+
+			// Name of a function which is called when a file is selected in CKFinder.
+			finder.selectActionFunction = SetFileField;
+
+			// Additional data to be passed to the selectActionFunction in a second argument.
+			// We'll use this feature to pass the Id of a field that will be updated.
+			finder.selectActionData = functionData;
+
+			// Name of a function which is called when a thumbnail is selected in CKFinder. Preview img
+			// finder.selectThumbnailActionFunction = ShowThumbnails;
+
+			// Launch CKFinder
+			finder.popup();
+		}
+
+		// This is a sample function which is called when a file is selected in CKFinder.
+		function SetFileField(fileUrl, data) {
+			document.getElementById(data["selectActionData"]).innerHTML = this
+					.getSelectedFile().name;
+			document.getElementById("imgpreview").src = fileUrl;
+		}
+		/*Avatar end*/
+	</script>
+      </div>
+    
+</body>
+</html>

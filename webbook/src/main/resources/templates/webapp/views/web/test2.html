@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link type="text/css" href="/web/css/formpay2.css"  rel="stylesheet" />
+
+<link type="text/css" href="/web/css/formpay.css"  rel="stylesheet" />
+
+
+	<
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+	<link href="/web/css/home.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<h2>Modal Login Form</h2>
+
+<a href="javascript:" onclick="addCart();">Mua ngay</a>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Mùa Hàng</button>
+
+<div id="id01" class="modal">
+ 
+  <form class="modal-content animate">
+    <!-- <header class="title">Giỏ hàng của tôi</header>
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+    <tbody><tr><td class="top-left"></td><td class="top"></td><td class="top-right"></td></tr><tr><td class="left"></td><td class="boxy-inner"><header class="title">Giỏ hàng của tôi</header>
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span><div id="cart_container" class="cart_container boxy-content" style="display: block;">
+      <div class="block" id="module_productscart">
+<div id="showempty"></div>
+<div class="blockcontent" id="showcart">
+  <div class="cartadd"><i class="fa fa-check"></i> Văn Hào Lưu Lạc - Tập 20 - Tặng Kèm Postcard 2 Mặt đã được thêm vào giỏ</div>
+   <div class="cartintro">Bạn có <span class="shownumber">1</span> sản phẩm trong giỏ</div>
+  <table cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+        <td colspan="2">
+          <table cellpadding="2" cellspacing="0" width="100%" id="thtitle">
+              <tbody><tr>
+                  <th width="40%" colspan="2" align="left">Sản phẩm trong giỏ</th>
+                  <th width="20%" align="right">Giá bán</th>
+                  <th width="20%" align="right">Số lượng</th>
+                  <th width="20%" align="right">Thành tiền</th>
+              </tr>
+          </tbody></table>
+          <div class="showboxcart" id="contentcart">
+          <table cellpadding="2" cellspacing="0" width="100%" class="productscart">
+              <tbody><tr id="cam272808">
+  <td nowrap="nowrap">
+    <img src="/web/css/Images/ImageBook/1.jpg" width="40" height="50" alt="Văn Hào Lưu Lạc - Tập 20 - Tặng Kèm Postcard 2 Mặt">
+  </td>
+  <td>
+  <div class="productname">
+    <a href="/3595/van-hao-luu-lac-tap-20-tang-kem-postcard-2-mat.html" title="Văn Hào Lưu Lạc - Tập 20 - Tặng Kèm Postcard 2 Mặt">Văn Hào Lưu Lạc - Tập 20 - Tặng Kèm Postcard 2 Mặt</a>
+          
+  </div>
+  </td>
+  <td align="right" width="20%">
+    <div class="sprice" id="price3595">48.000 ₫</div>
+  </td>
+  <td class="quantity" align="right" width="20%">
+  <input name="quantity3595" onkeydown="validateUserInput();" type="text" size="3" maxlength="3" class="small" value="2" onkeyup="changequantity(1, 3595, this.value, 272808);" onblur="changequantity(2, 3595, this.value, 272808);" autocomplete="off">
+  <div style="padding-right:15px">
+        <a href="javascript:" onclick="changequantity(2, 3595, 0, 272808);">Xóa</a>
+      </div>
+  </td>
+  <td align="right" width="20%">
+    <span id="cart-intoMoney272808">48.000 ₫</span>
+  </td>
+</tr>
+          </tbody></table>
+          </div>
+          <table cellpadding="2" cellspacing="1" width="100%">
+              <tbody><tr>
+                <td width="70%">
+                      <table width="100%" id="displayform">
+                          <tbody><tr>
+                              <td rowspan="2">Mã giảm giá</td>
+                              <td rowspan="2" width="80%" id="couponform">
+                              <form id="coupon" action="/orders/updatecoupon/index.html" onsubmit="submitform(this); return false;">
+                                  <input type="text" placeholder="Nhập mã nếu có" name="couponcode">
+                                  <input type="submit" class="bluebuttom" value="Áp dụng">
+                              </form>
+                              <span id="ajaxresultload"></span>
+                              </td>
+                          </tr>
+                      </tbody></table>
+                  </td>
+                 <td>
+                  <table width="100%">
+                      <tbody><tr>
+                          <td class="cardtool"><b>Tổng tiền:</b></td>
+                          <td class="cart-subtotal cardtool">
+                              <span id="cart-subtotal">48.000 ₫</span>
+                          </td>
+                      </tr>
+                      <tr id="couponvalue" style="display:none">
+                        <td class="cardtool">
+                            <b>Ưu đãi</b>
+                          </td>
+                          <td class="cart-subtotal cardtool">
+                              <span id="cart-coupon">0 ₫</span>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" style="border-bottom:1px solid #ccc"></td>
+                      </tr>
+                      <tr>
+                          <td class="cardtool">
+                              <b>Thành tiền:</b>
+                           </td>
+                          <td class="cart-subtotal cardtool">
+                              <span id="cart-total"><b>48.000 ₫</b></span>
+                          </td>
+                      </tr>
+                  </tbody></table>
+                  </td>
+              </tr>
+              <tr class="actions">
+                  <td>
+                  <a href="javascript:" class="continue" onclick="Boxy.get(this).hide();">
+                      <i class="fa fa-play"></i> Thêm sản phẩm khác vào giỏ hàng</a>
+                  </td>
+                  <td align="right" style="padding-top:10px;">
+                  <a href="/orders/checkout/index.html" class="redbuttom">Thực hiện thanh toán</a>
+                  </td>
+              </tr>
+          </tbody></table>
+          </td>
+       </tr>
+   </tbody></table>
+   </div>
+
+</div>
+</div></td><td class="right"></td></tr><tr><td class="bottom-left"></td><td class="bottom"></td><td class="bottom-right"></td></tr></tbody>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

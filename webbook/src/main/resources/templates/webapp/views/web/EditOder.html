@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico" />
+
+<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" />
+
+<link type="text/css" href="/web/css/styles.resolution.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+<script type='text/javascript' src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+
+<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+
+
+</head>
+<body>
+<div th:replace="webapp/common/web/header::header"></div>
+<style>
+   input{
+     
+      width: 100%;
+   }
+
+</style>
+<div th:each="orderbook: ${orderbooks}" >
+    <form th:action="@{/GioHang/updates}"      method="post"   style="margin: 50px 500px 20px 187px" enctype="multipart/form-data">
+  <label for="fname">Mã khách hàng</label><br>
+  <input type="text" id="fname" name="makh" th:value="${orderbook.makh}" readonly="readonly"><br><br>
+  <label for="lname">Tên khách hàng</label><br>
+  <input type="text" id="lname" name="tenkh" th:value="${orderbook.tenKH}" required><br><br>
+  <label for="lname">Email</label><br>
+  <input type="text" id="lname" name="email" th:value="${orderbook.email}" required><br><br>
+  <label for="lname">Số điện thoại</label><br>
+  <input type="text" maxlength="9" oninvalid="this.setCustomValidity('Số được thoại không được bỏ trống và không xuất hiện chữ')" oninput="this.setCustomValidity('')"  pattern="[0-9]{9}" id="lname" name="sodt" th:value="${orderbook.soDT}" required><br><br>
+   <label for="lname">Ngày mua</label><br>
+  <input type="text" id="lname"  th:value="${orderbook.ngaymua}" readonly="readonly"><br><br>
+  
+  
+  
+  <label for="lname">Tỉnh TP</label><br>
+  
+  <select  name="tinhtp" th:value="${orderbook.tinhTP}" id="dropDownId"  required>
+                            <option th:value="${orderbook.tinhTP}" th:text="${orderbook.tinhTP}">Chọn tỉnh thành phố...</option>
+                            <option value="Thành phố Hà Nội">Thành phố Hà Nội</option>
+
+                            <option value="Tỉnh Hà Giang">Tỉnh Hà Giang</option>
+
+                            <option value="Tỉnh Cao Bằng">Tỉnh Cao Bằng</option>
+
+                            <option value="Tỉnh Bắc Kạn">Tỉnh Bắc Kạn</option>
+
+                            <option value="Tỉnh Tuyên Quang">Tỉnh Tuyên Quang</option>
+
+                            <option value="Tỉnh Lào Cai">Tỉnh Lào Cai</option>
+
+                            <option value="Tỉnh Điện Biên">Tỉnh Điện Biên</option>
+
+                            <option value="Tỉnh Lai Châu">Tỉnh Lai Châu</option>
+
+                            <option value="Tỉnh Sơn La">Tỉnh Sơn La</option>
+
+                            <option value="Tỉnh Yên Bái">Tỉnh Yên Bái</option>
+
+                            <option value="Tỉnh Hoà Bình">Tỉnh Hoà Bình</option>
+
+                            <option value="Tỉnh Thái Nguyên">Tỉnh Thái Nguyên</option>
+
+                            <option value="Tỉnh Lạng Sơn">Tỉnh Lạng Sơn</option>
+
+                            <option value="Tỉnh Quảng Ninh">Tỉnh Quảng Ninh</option>
+
+                            <option value="Tỉnh Bắc Giang">Tỉnh Bắc Giang</option>
+
+                            <option value="Tỉnh Phú Thọ">Tỉnh Phú Thọ</option>
+
+                            <option value="Tỉnh Vĩnh Phúc">Tỉnh Vĩnh Phúc</option>
+
+                            <option value="Tỉnh Bắc Ninh">Tỉnh Bắc Ninh</option>
+
+                            <option value="Tỉnh Hải Dương">Tỉnh Hải Dương</option>
+
+                            <option value="Thành phố Hải Phòng">Thành phố Hải Phòng</option>
+
+                            <option value="Tỉnh Hưng Yên">Tỉnh Hưng Yên</option>
+
+                            <option value="Tỉnh Thái Bình">Tỉnh Thái Bình</option>
+
+                            <option value="Tỉnh Hà Nam">Tỉnh Hà Nam</option>
+
+                            <option value="Tỉnh Nam Định">Tỉnh Nam Định</option>
+
+                            <option value="Tỉnh Ninh Bình">Tỉnh Ninh Bình</option>
+
+                            <option value="Tỉnh Thanh Hóa">Tỉnh Thanh Hóa</option>
+
+                            <option value="Tỉnh Nghệ An">Tỉnh Nghệ An</option>
+
+                            <option value="Tỉnh Hà Tĩnh">Tỉnh Hà Tĩnh</option>
+
+                            <option value="Tỉnh Quảng Bình">Tỉnh Quảng Bình</option>
+
+                            <option value="Tỉnh Quảng Trị">Tỉnh Quảng Trị</option>
+
+                            <option value="Tỉnh Thừa Thiên Huế">Tỉnh Thừa Thiên Huế</option>
+
+                            <option value="Thành phố Đà Nẵng">Thành phố Đà Nẵng</option>
+
+                            <option value="Tỉnh Quảng Nam">Tỉnh Quảng Nam</option>
+
+                            <option value="Tỉnh Quảng Ngãi">Tỉnh Quảng Ngãi</option>
+
+                            <option value="Tỉnh Bình Định">Tỉnh Bình Định</option>
+
+                            <option value="Tỉnh Phú Yên">Tỉnh Phú Yên</option>
+
+                            <option value="Tỉnh Khánh Hòa">Tỉnh Khánh Hòa</option>
+
+                            <option value="Tỉnh Ninh Thuận">Tỉnh Ninh Thuận</option>
+
+                            <option value="Tỉnh Bình Thuận">Tỉnh Bình Thuận</option>
+
+                            <option value="Tỉnh Kon Tum">Tỉnh Kon Tum</option>
+
+                            <option value="Tỉnh Gia Lai">Tỉnh Gia Lai</option>
+
+                            <option value="Tỉnh Đắk Lắk">Tỉnh Đắk Lắk</option>
+
+                            <option value="Tỉnh Đắk Nông">Tỉnh Đắk Nông</option>
+
+                            <option value="Tỉnh Lâm Đồng">Tỉnh Lâm Đồng</option>
+
+                            <option value="Tỉnh Bình Phước">Tỉnh Bình Phước</option>
+
+                            <option value="Tỉnh Tây Ninh">Tỉnh Tây Ninh</option>
+
+                            <option value="74">Tỉnh Bình Dương</option>
+
+                            <option value="75">Tỉnh Đồng Nai</option>
+
+                            <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
+
+                            <option value="79">Thành phố Hồ Chí Minh</option>
+
+                            <option value="80">Tỉnh Long An</option>
+
+                            <option value="82">Tỉnh Tiền Giang</option>
+
+                            <option value="83">Tỉnh Bến Tre</option>
+
+                            <option value="84">Tỉnh Trà Vinh</option>
+
+                            <option value="86">Tỉnh Vĩnh Long</option>
+
+                            <option value="87">Tỉnh Đồng Tháp</option>
+
+                            <option value="89">Tỉnh An Giang</option>
+
+                            <option value="91">Tỉnh Kiên Giang</option>
+
+                            <option value="92">Thành phố Cần Thơ</option>
+
+                            <option value="93">Tỉnh Hậu Giang</option>
+
+                            <option value="94">Tỉnh Sóc Trăng</option>
+
+                            <option value="95">Tỉnh Bạc Liêu</option>
+
+                            <option value="96">Tỉnh Cà Mau</option>
+                        </select>
+  
+  <br><br>
+ 
+  <label for="lname">Địa chỉ</label><br>
+  <input type="text" id="lname" name="diachi" th:value="${orderbook.diachi}" required><br><br>
+  
+  <input style="width: 60px;" type="submit" value="Submit">
+</form> 
+
+</div>
+
+
+<div th:replace="webapp/common/web/footer::footer"></div>
+</body>
+</html>

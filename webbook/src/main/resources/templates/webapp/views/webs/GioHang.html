@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="htw.utp://wwltraq.net.nz/thymeleaf/layout"
+	>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+         
+         
+         <div layout:fragment="addbook">
+                <form th:action="@{/admin/pageUpdates}" th:object="${chudes}" method="post"  enctype="multipart/form-data">            
+                      <input type="text" th:field="*{name}" ></input>
+                       <input type="text" class ="form-control" name="tentl"   required /><br/>
+                      <input type="submit" value="Gửi"></input>
+                    </form>    
+	                </div>
+         
+</body>
+</html>

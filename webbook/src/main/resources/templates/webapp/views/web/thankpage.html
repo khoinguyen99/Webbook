@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	>
+	  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico"/>
+
+	<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"  rel="stylesheet"/>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet"/>
+	
+	
+     
+   
+
+
+	<link type="text/css" href="/web/css/styles.resolution.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+	<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+	<script type='text/javascript' src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+	<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+	
+
+<style>
+ .contents{
+    margin-top:40px;
+    padding-top:40px;
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid beige;
+    font-family: Arial, Helvetica, sans-serif;
+     
+ }  
+ #sub
+ {
+ display: inline-block;
+    background: #00cc66;
+    border: 1px solid #00cc66;
+    color: #fff;
+    padding: 8px 20px 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+ }
+ #findmas {
+	  width: 20%;
+
+}
+</style>
+
+</head>
+<body>
+      
+  <div th:replace="webapp/common/web/header::header"></div>
+        <div class="contents">
+          <h4 style="color:#00CC66;text-align: center;font-size: 25px">Cảm ơn bạn đã đặt hàng tại nobita.vn!</h4><br/>
+          <div th:if="${session.nameuser != null}">
+           
+          <p><b>Xin chào [[${session.nameuser}]]</b></p>
+         
+          
+          <p>Thông tin chi tiết đơn hàng đã được gửi đến email useremail. Bạn vui lòng kiểm tra hộp thư đến , nếu không tìm thấy vui lòng tìm thêm trong hộp thư spam hoặc Junk Folder</p>
+    
+           </div>
+          
+          <h5 style="color:#00CC66;font-size: 25px">Lưu ý: </h5>         
+          <p>Nếu là khách hàng mới nobita sẽ tiến hành xác nhận đơn hàng qua điện thoại để xác nhận thông tin bạn đã cung cấp trong đơn hàng. Sau khi  đồng ý nobita sẽ tiến hành xử lý đơn hàng.</p>
+          
+           
+        
+        </div>
+        
+        
+        
+          <div th:replace="webapp/common/web/footer::footer"></div>
+</body>
+</html>

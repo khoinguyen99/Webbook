@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico"/>
+
+	<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"  rel="stylesheet"/>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet"/>
+	
+	
+     
+   
+
+
+	<link type="text/css" href="/web/css/styles.resolution.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+	<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+	<script type='text/javascript' src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+	<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <div th:replace="webapp/common/web/header::header"></div>
+  
+  <div style="text-align: center;padding-top: 20px;" th:utext="${khongtimthay}">cc</div>
+  
+ <div id="container" th:each="chude,Star : ${timkiembooks}">
+ 
+			<div class="sortable" id="layoutGroup3">
+				<div class="block" id="module_categories">
+					<h2>Danh mục</h2>
+					<div class="blockcontent">
+
+						<ul>
+							<li><a href="#"
+								title="Bài học kinh doanh"><span th:text="${chude.categoryEntity.name}"></span></a></li>
+
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div class="block" id="module_listfields">
+					<div class="fields_contener">
+						<h2>Thương Hiệu</h2>
+						<div class="blockcontent">
+							<div class="showboxfield">
+								<ul>
+								<li><a href="#" title="Bài học kinh doanh"><span th:text="${chude.thuongHieuEntity.tenTH}"></span></a></li>
+								
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+				
+				<div class="sortable" id="layoutGroup4">
+				<div class="block" id="module_listproducts">
+					<h1>
+						Tìm Kiếm Sản Phẩm Với Từ Khóa:"<span th:utext="${tukhoa}"></span>" trả về <span>[[${Star.size}]]</span> kết quả tìm kiếm .
+					</h1>
+					
+					<div class="intro"></div>
+					<div class="clear"></div>
+					<div class="pagesright">
+						<div class="views">
+							<a class="active fa fa-th-large"
+								href="/danh-muc/18/tai-chinh-ke-toan.html?page=1"
+								title="Xem danh sách theo dạng lưới"></a> <a
+								class=" fa fa-th-list"
+								href="/danh-muc/18/tai-chinh-ke-toan.html?page=1&view=1"
+								title="Xem theo dạng danh sách"></a>
+						</div>
+						<div class="sorts">
+							Xem theo: &nbsp;&nbsp;&nbsp; <select onchange="setOrder(this);"
+								id="order" name="item_order">
+								<option selected="selected" value="0">Mới trước cũ sau</option>
+								<option value="1">Cũ trước mới sau</option>
+								<option value="2">Giá thấp đến cao</option>
+								<option value="3">Giá cao đến thấp</option>
+								<option value="4">Bán chạy nhất</option>
+								<option value="5">Xem nhiều</option>
+								<option value="6">Ngày xuất bản</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+												
+					</div>
+													
+<!-- 					<div class="row" th:if="${!bookPages.hasContent()}"> -->
+<!-- 					<div class="col"> -->
+<!-- 						<div class="alert alert-danger" roler="alert"> -->
+<!-- 							<strong>Not book found</strong> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+				</div>
+					<div class="clear"></div>
+					<div class="blockcontent">
+						<div class="product_vertical_contener" >
+							<div class="showleft">
+								<div class="productinfo">
+									<div class="productname">
+										<a href="#" th:title="${chude.tenSach}" th:text="${chude.tenSach}"></a>
+									</div>
+									<div class="stars">
+										<div class="starsvote" style="width: 80%"> 
+										
+										
+										<div th:utext="${chude.shortJavascript}"></div>
+										
+										
+										
+									</div>
+									
+									<div class="clear"></div>
+									<div class="fields">
+										<span><a href="/thuong-hieu/510/trinh-minh-thao.html" th:title="${chude.tacGiaEntity.tenTG}" th:text="${chude.tacGiaEntity.tenTG}"></a></span>
+									</div>
+
+									<div class="productprice">
+										<span class="prices"><strong th:text="${chude.donGia}+'đ'"></strong></span>
+										&nbsp;&nbsp;&nbsp; <span class="rootprice"></span>
+									</div>
+									<div class="intro" th:text="${chude.moTa}"></div>
+								</div>
+							</div>
+							<div class="image" >
+								<a  
+									th:href="@{/homepage/detailbook/{mas}(mas=${chude.maSach})}"
+									title="Khách Hàng Là Một Mối Quan Hệ, Không Phải Một Giao Dịch"><img
+									width="120" height="168"
+									th:src="@{'/web/css/Images/ImageBook/'+${chude.thumbnail}}"
+									alt="Khách Hàng Là Một Mối Quan Hệ, Không Phải Một Giao Dịch"
+									title="Khách Hàng Là Một Mối Quan Hệ, Không Phải Một Giao Dịch"
+									data-pagespeed-url-hash="4197742231"
+									onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+
+								<span class="saleprice" th:text="${chude.maGiamGia}+'%'"></span>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="product_vertical_contener">
+
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear">&nbsp;</div>
+
+					<div class="clear"></div>
+					<script type="text/javascript">
+						function setOrder(ojb) {
+							url = '/danh-muc/18/tai-chinh-ke-toan.html';
+							order = ojb.value;
+							url = addQuery(url, 'ordering=' + order);
+							document.location.href = url;
+						}
+					</script>
+					<div class="clear"></div>
+				</div>
+
+			</div>
+		</div>
+		 <div class="clear"></div>
+		
+		
+		
+	
+	
+	
+<!-- 	<nav  aria-label="..." th:if="${bookPages.totalPages>0}" style="margin-left: 700px;">   -->
+<!-- 	  <ul class="pagination"> -->
+<!-- 	    <li class="page-item disabled"  -->
+<!-- 	      th:class="${1== bookPages.number  +1} ? 'page-item active' : 'page-item'"  > -->
+<!-- 	      <a th:href="@{'/homepage/chude/'+${session.theloai}+'/'+${session.bookid}(size=${bookPages.size},page=${1})}" class="page-link">First</a> -->
+<!-- 	    </li> -->
+	    
+	   
+<!-- 	    <li class="page-item disabled"  -->
+<!-- 	      th:each="pageNumber : ${pageNumbers}" -->
+<!-- 	      th:if="${bookPages.totalPages > 1}" -->
+<!-- 	      th:class="${pageNumber == bookPages.number  +1} ? 'page-item active' : 'page-item'" -->
+<!-- 	       > -->
+<!-- 	      <a class="page-link"  -->
+<!-- 	      th:href="@{'/homepage/chude/'+${session.theloai}+'/'+${session.bookid}(size=${bookPages.size},page=${pageNumber})}" -->
+<!-- 	      th:text="${pageNumber}" -->
+<!-- 	      ></a> -->
+<!-- 	    </li> -->
+	 
+	    
+<!-- 	    <li class="page-item disabled"  -->
+<!-- 	      th:class="${bookPages.totalPages == bookPages.number + 1} ? 'page-item active' : 'page-item'" > -->
+<!-- 	      <a th:href="@{'/homepage/chude/'+${session.theloai}+'/'+${session.bookid}(size=${bookPages.size},page=${bookPages.totalPages})}" class="page-link">Last</a> -->
+<!-- 	    </li> -->
+<!-- 	  </ul> -->
+<!-- 	</nav> -->
+	
+	</div>
+        <div class="clear"></div>
+	</div>
+	
+						
+					</div>
+				</div>
+  
+  
+   <div th:replace="webapp/common/web/footer::footer"></div>
+</body>
+</html>

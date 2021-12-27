@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      >
+<head>
+<title>Website Mua Sách Online Được Yêu Thích Nhất</title>	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+	<meta name="description" content="Mua sách online với giá và dịch vụ tốt nhất tại  Nobita.vn. Giao hàng thu tiền tân nơi, bọc Plastic miễn phí, đổi trả hàng nhanh chóng,..." />
+
+	<meta name="keywords" content="nobita.vn, nobita, mua sách online, nhà sách trên mạng, nhà sách trực tuyến, sách bán chạy" />
+
+	<meta name="generator" content="Mua sách online với giá và dịch vụ tốt nhất tại  Nobita.vn. Giao hàng thu tiền tân nơi, bọc Plastic miễn phí, đổi trả hàng nhanh chóng,..." />
+
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+
+	<meta name="Copyright" content="Design A web."/>
+
+	<link rel="shortcut icon"  th:href="@{/web/css/Images/slideImage/favicon.ico}"/>
+
+	<link type="text/css"  th:href="@{/web/css/styles.css}" rel="stylesheet" />
+
+	<link  th:href="@{http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css}"  rel="stylesheet"/>
+	<link  th:href="@{http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css}" rel="stylesheet"/>
+	
+	
+     
+   
+
+
+	<link type="text/css"  th:href="@{/web/css/styles.resolution.css}" rel="stylesheet" />
+
+	<link rel="stylesheet"  th:href="@{/web/css/boxy.css}" type="text/css" />
+	<link rel="stylesheet" type="text/css"  th:href="@{/web/css/responsive.css}" />
+
+	<script type="text/javascript" th:src="@{/web/vendor/bootstrap/js/jquery-1.8.2.min.js}"></script>
+
+	<script th:src="@{/web/vendor/bootstrap/js/jquery.min.js}"></script>
+
+	<script type="text/javascript" th:src="@{/web/vendor/bootstrap/js/common.js}"></script>
+
+	<script type='text/javascript' th:src='@{/web/vendor/bootstrap/js/jquery.boxy.js}'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+	<link  th:href="@{/web/css/home.css}" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+ <div id="main_contener">
+  
+   
+        <div th:replace="webapp/common/web/header::header"></div>
+
+   
+        <div class="clear"></div>
+     
+		<div id="container">
+            <div layout:fragment="container"> 
+              
+            </div>
+        
+  
+		</div>
+    
+		<div class="clear"></div>
+
+	    <script language="javascript" type="text/javascript"></script>
+	   
+      
+        <div th:replace="webapp/common/web/nav::nav"></div>
+
+		<script>function openNav() { document.getElementById("mySidenav").style.width = "300px"; } function closeNav() { document.getElementById("mySidenav").style.width = "0"; }</script>
+		
+		<script>$(document).ready(function () { $('.mainmenu-mb #submenu0 li').on('click', function () { $('.mainmenu-mb #submenu0 li').removeClass('active'); $(this).addClass('active'); }); $('.search-mb i').on('click', function () { $("#header .top_header .rightheader .search").removeClass('show'); $("#header .top_header .rightheader .search").addClass('show'); }); });</script>
+		
+		<div th:replace="webapp/common/web/content::content"></div>
+		
+		
+   
+         <div  th:replace="webapp/common/web/footer::footer"></div>
+         
+         
+      
+   
+ 
+ 
+ </div>
+</body>
+</html>

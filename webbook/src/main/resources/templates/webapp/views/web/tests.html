@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+
+<script type="text/javascript" src="/web/vendor/jquery/jquery-3.5.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style >
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #dde1e7;
+}
+.container {
+  background: #dde1e7;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+.pagination {
+  display: flex;
+  list-style: none;
+}
+.pagination li {
+  flex: 1;
+  margin: 0px 5px;
+  background: #dde1e7;
+  border-radius: 3px;
+  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+.pagination li a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #4d3252;
+  height: 35px;
+  width: 45px;
+  display: block;
+  line-height: 35px;
+}
+.pagination li:first-child a {
+  width: 120px;
+}
+.pagination li:last-child a {
+  width: 100px;
+}
+.pagination li.active {
+  box-shadow: inset -3px -3px 7px #ffffff73,
+    inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+.pagination li.active a {
+  font-size: 17px;
+  color: #6f6cde;
+}
+.pagination li:first-child {
+  margin: 0 15px 0 0;
+}
+.pagination li:last-child {
+  margin: 0 0 0 15px;
+}
+
+
+</style>
+</head>
+<body>
+
+	
+	
+	 <div class="row" th:if="${!bookPages.hasContent()}">
+	 	<div class="col">
+	 	  <div class="alert alert-danger" roler="alert">
+	 	    <strong>No book found</strong>
+	 	              
+	 	  </div>
+	 	
+	 	</div>
+	 </div>
+	 <table class="table -table-striped table-inverse"
+	  th:if="${bookPages.hasContent()}">
+	   <thead class="thead-inverse">
+	     <tr>
+	        <th>Category ID</th>
+	        <th>Name</th>
+	     </tr>
+	   	   </thead>
+	 <tbody>
+	   <tr th:each="book, iStat : ${bookPages.content}">
+	     
+	     <td scope="row">[[${book.maSach}]]</td>
+	     <td th:text="${book.tenSach}"></td>
+	   
+	   </tr>
+	 
+	 </tbody>
+	 
+	 </table>
+	 
+<!-- 	 <form action=""> -->
+<!-- 	  <div class="form-inline float-left"> -->
+<!-- 	     <label for="size">Page Size:</label> -->
+<!-- 	      <select name="size" id="size" class="form-control" -->
+<!-- 	        onchange="this.form.submit()" > -->
+<!-- 	      	<option th:selected="${bookPages.size == 2}"  value="2">2</option> -->
+<!-- 			<option th:selected="${bookPages.size == 5}"  value="5">5</option> -->
+<!-- 			<option th:selected="${bookPages.size == 10}" value="10">10</option> -->
+<!-- 			<option th:selected="${bookPages.size == 20}" value="20">20</option> -->
+
+<!-- 			</select> -->
+<!-- 	  </div> -->
+<!-- 	 </form> -->
+<!-- 	<nav aria-label="..." th:if="${bookPages.totalPages>0}" style="margin-left: 700px;" >   -->
+<!-- 	  <ul class="pagination"> -->
+<!-- 	    <li class="page-item disabled"  -->
+<!-- 	      th:class="${1== bookPages.number  +1} ? 'page-item active' : 'page-item'"  > -->
+<!-- 	      <a th:href="@{/homepage/pageing/{ids}(ids=${chude.id})(size=${bookPages.size},page=${1})}" class="page-link">First</a> -->
+<!-- 	    </li> -->
+	    
+	   
+<!-- 	    <li class="page-item active" -->
+<!-- 	      th:each="pageNumber : ${pageNumbers}" -->
+<!-- 	      th:if="${bookPages.totalPages > 1}" -->
+<!-- 	      th:class="${pageNmuber == bookPages.number  +1} ? 'page-item active' : 'page-item'" -->
+<!-- 	       > -->
+<!-- 	      <a class="page-link"  -->
+<!-- 	      th:href="@{/homepage/pageing/(size=${bookPages.size},page=${pageNumber})}" -->
+<!-- 	      th:text="${pageNumber}" -->
+<!-- 	      ></a> -->
+<!-- 	    </li> -->
+	 
+	    
+<!-- 	    <li class="page-item disabled"  -->
+<!-- 	      th:class="${bookPages.totalPages == bookPages.number + 1} ? 'page-item active' : 'page-item'" > -->
+<!-- 	      <a th:href="@{/homepage/pageing/(size=${bookPages.size},page=${bookPages.totalPages})}" class="page-link">Last</a> -->
+<!-- 	    </li> -->
+<!-- 	  </ul> -->
+<!-- 	</nav> -->
+	
+	<div class="container" th:if="${bookPages.totalPages>0}">
+		  <ul class="pagination">
+		    <li><a th:href="@{/homepage/pageing/(size=${bookPages.size},page=${1})}">first</a></li>
+		    
+		    <li  th:each="pageNumber : ${pageNumbers}" th:if="${bookPages.totalPages > 1}"
+		     th:checked="${pageNmuber == bookPages.number  +1} ? 'active' : ''"
+		    
+		    >
+	            
+	         <a th:href="@{/homepage/pageing/(size=${bookPages.size},page=${pageNumber})}" th:text="${pageNumber}"></a></li>
+	                
+		    <li><a th:href="@{/homepage/pageing/(size=${bookPages.size},page=${bookPages.totalPages})}">Last</a></li>
+		  
+		    
+		   
+		  </ul>
+     </div>
+
+   
+    
+    
+</body>
+</html>

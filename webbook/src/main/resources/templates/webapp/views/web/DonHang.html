@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico" />
+
+<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+<link
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"
+	rel="stylesheet" />
+
+<link type="text/css" href="/web/css/styles.resolution.css"
+	rel="stylesheet" />
+
+<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+<script type="text/javascript"
+	src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+<script type='text/javascript'
+	src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+
+<link href="/web/css/products.css" type="text/css" rel="stylesheet" />
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ 
+
+<link href="/web/css/giohang.css" type="text/css" rel="stylesheet" />
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div th:replace="webapp/common/web/header::header"></div>
+ 
+ <style>
+ #myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+   width: 92%;
+   margin-left: 51px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+   width: 92%;
+   margin-left: 51px;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  
+
+}
+</style>
+    <h2 class="text-center">Đơn Hàng</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="myTable" >
+    <tr class="header">
+     <th style="width:5%;">Hoàn thành</th>
+    <th style="width:5%;">Mã ĐH</th>
+    <th style="width:15%;">Tên Khách Hàng</th>
+    <th style="width:10%;">Email</th>
+    
+    <th style="width:10%;">Tỉnh Thành Phố</th>
+    <th style="width:10%;">Địa Chỉ</th>
+    <th style="width:10%;">Ngày mua</th>
+     <th style="width:10%;">Số lượng mua</th>
+    <th style="width:50%;">Thông tin sách</th>
+     <th style="width:10%;"></th>
+  
+   
+    
+   </tr>
+   <tr th:each="book,iStar: ${bookPages.content}">
+     <td th:utext="${complete}">hahah</td>
+    <td>[[${book.makh}]]</td>
+    <td>[[${book.tenKH}]]</td>
+    <td>[[${book.email}]]</td>
+   
+    <td>[[${book.tinhTP}]]</td>
+    <td>[[${book.diachi}]]</td>
+    <td>[[${book.ngaymua}]]</td>
+     <td>[[${book.soluongsachmua}]]</td>
+    <td>[[${book.bookEntities2}]]</td>
+    <td>
+       
+        <a th:href="@{/GioHang/editorder/{id}(id=${book.makh})}">Cập Nhật</a>
+         <a th:href="@{/GioHang/delete/{id}(id=${book.makh})}">Hủy</a>
+      </td> 
+        
+     
+<!--      <td th:each="oder: ${oderbookss}"> -->
+<!--        <p th:text="${oder.tenSach}"></p> -->
+   
+<!--    </td> -->
+    
+    
+    
+   </tr> 
+  
+ 
+  
+</table>
+<script>
+   
+ 
+</script>
+
+ <div class="clear"></div>
+
+ <div class="row" style=" width: 94%; margin-left: 39px;" th:if="${!bookPages.hasContent()}">
+	 	<div class="col">
+	 	  <div class="alert alert-danger" roler="alert">
+	 	    <strong>No book found</strong>
+	 	              
+	 	  </div>
+	 	
+	 	</div>
+	 </div>
+
+  <nav  aria-label="..." th:if="${bookPages.totalPages>0}" style="margin-left: 500px;margin-top: 100px;">  
+	  <ul class="pagination">
+	    <li class="page-item disabled" 
+	      th:class="${1== bookPages.number  +1} ? 'page-item active' : 'page-item'"  >
+	      <a th:href="@{/GioHang/donhang/(size=${bookPages.size},page=${1})}" class="page-link">First</a>
+	    </li>
+	    
+	   
+	    <li class="page-item disabled" 
+	      th:each="pageNumber : ${pageNumbers}"
+	      th:if="${bookPages.totalPages > 1}"
+	      th:class="${pageNumber == bookPages.number  +1} ? 'page-item active' : 'page-item'"
+	       >
+	      <a class="page-link" 
+	      th:href="@{/GioHang/donhang/(size=${bookPages.size},page=${pageNumber})}"
+	      th:text="${pageNumber}"
+	      ></a>
+	    </li>
+	 
+	    
+	    <li class="page-item disabled" 
+	      th:class="${bookPages.totalPages == bookPages.number + 1} ? 'page-item active' : 'page-item'" >
+	      <a th:href="@{/GioHang/donhang/(size=${bookPages.size},page=${bookPages.totalPages})}" class="page-link">Last</a>
+	    </li>
+	  </ul>
+	</nav>
+ 
+     
+    <div th:replace="webapp/common/web/footer::footer"></div>
+</body>
+</html>

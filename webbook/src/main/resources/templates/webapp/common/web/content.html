@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+ <div th:fragment="content">
+ 
+ <div id="container">
+		
+			<div id="mainbanner">
+				<div class="mainbaner">
+					<link rel="stylesheet" th:href="@{/web/css/jquery.bxslider.css}" type="text/css" />
+					<script type="text/javascript" th:src="@{/web/vendor/bootstrap/js/jquery.bxslider.js}"></script>
+					<div id="slider-wrapper">
+						<ul class="bxslider">
+							<li><a href="/banners/view/125/sci-full.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/sci-2020.jpg" title="SCI FULL"></a></li>
+							<li><a href="/banners/view/124/the-vi-thuong.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/the-vi-thuong.jpg" title="The Vi Thuong"></a></li>
+							<li><a href="/banners/view/123/artemis-fowl.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/artemis.jpg" title="ARTEMIS FOWL"></a></li>
+							<li><a href="/banners/view/121/sci-tap-4.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/sci-tap-4.jpg" title="sci tap 4"></a></li>
+							<li><a href="/banners/view/120/artmis.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/atta.jpg" title="artmis"></a></li>
+							<li><a href="/banners/view/119/luc-xu.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/luc-xu-qc.jpg" title="luc xu"></a></li>
+							<li><a href="/banners/view/118/thoi-gian-vun-vo.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/thoi-gian-vun-vo.jpg" title="Thời Gian Vụn Vỡ"></a></li>
+							<li><a href="/banners/view/117/song-ngam.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/song-ngam.jpg" title="song ngam"></a></li>
+							<li><a href="/banners/view/122/doc-gia.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/doc-gia-2019.jpg" title="độc giả"></a></li>
+						</ul>
+					</div>
+					<script
+						type="text/javascript">$(window).load(function () { $('.bxslider').bxSlider({ auto: true, infiniteLoop: true }); });</script>
+				</div>
+			</div>
+			
+			
+			<div class="sortable" id="layoutGroup1">
+				<div class="block" id="module_newproducts">
+
+					<h2>
+
+						<a class="title" href="/sach-moi.html" title="Sách mới">Sách mới<span
+								class="b-main__category-arrow"></span></a>
+
+						<a class="more" href="/sach-moi.html" title="Xem tất cả">Xem tất cả</a>
+
+					</h2>
+              
+					<div class="blockcontent">
+
+						<div class="newproducts" style="position:relative; padding:0 20px; overflow:hidden; height:340px;">
+
+							<div id="ajaxncontainer"  style="width:2000px; left: 0px; display:inline-flex; transition: all 500ms ease 0s;padding-inline-end: 10px;padding-inline-start: 10px;">
+                     
+								<div class="product_contener" th:each="listbook: ${listbooktop}">
+									<div class="products">
+										<div class="image"><a
+												th:href="@{/homepage/detailbook/{id}(id=${listbook.maSach})}"
+												th:title="${listbook.tenSach}"><img
+												th:src="@{'/web/css/Images/ImageBook/'+${listbook.thumbnail}}"
+													alt="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)"
+													title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3562/cao-thu-doi-trang-thay-den-tap-3-ban-dac-biet-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)" th:text="${listbook.tenSach}"></a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1708/phong-thu-luu-ngoc.html"
+													title="Phong Thư Lưu Ngốc">Phong Thư Lưu Ngốc</a></span></div>
+
+
+										<div class="prices">389.000 ₫</div>
+
+									</div>
+									
+								</div>
+
+							
+								
+
+							</div>
+						
+
+							<div class="clear"></div>
+
+							<div class="list_btn">
+
+								<a onclick="check();" id="prevn" class="prev" href="javascript:"><i
+										class="fa fa-chevron-left"></i></a>
+
+								<a onclick="chec();" id="nextn" class="next" href="javascript:"><i
+										class="fa fa-chevron-right"></i></a>
+
+									
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+
+				</div>
+
+
+			<script>
+				var next = 0;
+				var chuyen = 0;
+
+				function check() {
+					next += 221;
+					chuyen += 1;
+
+					if (chuyen % 2 == 0) {
+
+						document.getElementById('ajaxncontainer').style.marginLeft = '-'
+								+ next + 'px';
+
+					} else {
+						document.getElementById('ajaxncontainer').style.marginLeft = '-'
+								+ next + 'px';
+
+					}
+					if (chuyen == 4) {
+						document.getElementById('ajaxncontainer').style.marginLeft = 0 + 'px';
+						chuyen = 0;
+						next = 0;
+					}
+
+				}
+
+				setInterval(function() {
+
+					check();
+				}, 3000);
+			</script>
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+				   <div class="block" id="module_publishing">
+
+					<h2>
+
+						<a class="title" href="/sach-sap-phat-hanh.html" title="Sắp phát hành">Sách bán chạy<span
+								class="b-main__category-arrow"></span></a><a class="more"
+							href="/sach-sap-phat-hanh.html" title="Xem tất cả">Xem tất cả</a>
+
+					</h2>
+					</div>
+
+					<div class="blockcontent">
+
+						<div class="newproducts" style="position:relative; padding:0 20px; overflow:hidden; height:340px">
+
+							<div id="ajaxncontainer"  style="width:2000px; left: 0px; display:inline-flex; transition: all 500ms ease 0s;padding-inline-end: 10px;padding-inline-start: 10px;">
+                     
+								<div class="product_contener" th:each="listbook: ${toporder}">
+									<div class="products">
+										<div class="image"><a
+													th:href="@{/homepage/detailbook/{id}(id=${listbook.maSach})}"
+												th:title="${listbook.tenSach}"><img
+												th:src="@{'/web/css/Images/ImageBook/'+${listbook.thumbnail}}"
+													alt="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)"
+													title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3562/cao-thu-doi-trang-thay-den-tap-3-ban-dac-biet-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)" th:text="${listbook.tenSach}"></a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1708/phong-thu-luu-ngoc.html"
+													title="Phong Thư Lưu Ngốc">Phong Thư Lưu Ngốc</a></span></div>
+
+
+										<div class="prices">389.000 ₫</div>
+
+									</div>
+									
+								</div>
+
+							
+								
+
+							</div>
+						
+
+							<div class="clear"></div>
+
+							<div class="list_btn">
+
+								<a onclick="check();" id="prevn" class="prev" href="javascript:"><i
+										class="fa fa-chevron-left"></i></a>
+
+								<a onclick="chec();" id="nextn" class="next" href="javascript:"><i
+										class="fa fa-chevron-right"></i></a>
+
+									
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+
+				</div>
+				
+				
+				
+				<div class="block" id="module_topcategories">
+					<h2>
+						<a class="title" href="/products/tat-ca-chuyen-muc.html" title="Danh mục">Danh mục<span
+								class="b-main__category-arrow"></span></a>
+						<a class="more" href="/products/tat-ca-chuyen-muc.html" title="Xem tất cả">Xem tất cả</a>
+					</h2>
+					<div class="blockcontent">
+						<div style="position:relative; padding:0; overflow:hidden; margin-left:-4%">
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/homepage/danhmuc/1" title=""><img
+												src="https://nobita.vn/stores/uploads/m/sach-kinh-te__44040.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/homepage/danhmuc/1" title="">Sách kinh tế</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/homepage/danhmuc/2" title=""><img
+												src="https://nobita.vn/stores/uploads/c/mr-bu__06488.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/homepage/danhmuc/2" title="">Văn học nước ngoài</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/3/van-hoc-trong-nuoc.html" title=""><img
+												src="https://nobita.vn/stores/uploads/p/du-xa-se-cu-du-la-se-quen__31174.jpg" alt=""
+												title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/3/van-hoc-trong-nuoc.html" title="">Văn học trong nước</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/4/sach-ki-nang-song.html" title=""><img
+												src="https://nobita.vn/stores/uploads/z/ki-nang-song__84906.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/4/sach-ki-nang-song.html" title="">Sách kĩ năng sống</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/5/sach-tuoi-teen.html" title=""><img
+												src="https://nobita.vn/stores/uploads/h/teen__26864.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/5/sach-tuoi-teen.html" title="">Sách tuổi teen</a>
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="block " id="content_seohome">
+					<div class="blockcontent">
+						<h1>
+							<span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">Mua
+									S&aacute;ch Online Tại Nobita.Vn</span></span>
+						</h1>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:12px;">Ra đời
+									từ năm 2011, đến nay <strong>Nobita.vn</strong> đ&atilde; trở th&agrave;nh địa chỉ
+									<a href="http://nobita.vn/"><strong>mua s&aacute;ch online</strong></a> quen thuộc
+									của h&agrave;ng ng&agrave;n độc giả tr&ecirc;n cả nước. Với đầu s&aacute;ch phong
+									ph&uacute;, thuộc c&aacute;c thể loại: <strong><a
+											href="http://nobita.vn/danh-muc/2/van-hoc-nuoc-ngoai.html">Văn học nước
+											ngoại</a>, <a href="http://nobita.vn/danh-muc/3/van-hoc-trong-nuoc.html">Văn
+											học trong nước</a>, <a
+											href="http://nobita.vn/danh-muc/1/sach-kinh-te.html">Kinh tế</a>, <a
+											href="http://nobita.vn/danh-muc/4/sach-ki-nang-song.html">Kỹ năng sống</a>,
+										<a href="http://nobita.vn/danh-muc/7/sach-thieu-nhi.html">Thiếu nhi</a>, <a
+											href="http://nobita.vn/danh-muc/6/hoc-ngoai-ngu.html">S&aacute;ch học ngoại
+											ngữ</a>, <a
+											href="http://nobita.vn/danh-muc/9/sach-chuyen-nganh.html">S&aacute;ch
+											chuy&ecirc;n ng&agrave;nh</a></strong>,... được cập nhật li&ecirc;n tục từ
+									c&aacute;c nh&agrave; xuất bản uy t&iacute;n trong nước.&nbsp;</span></span>
+						</p>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:12px;">Khi mua
+									s&aacute;ch online tại Nobita.vn, Qu&yacute; kh&aacute;ch được <strong>Bọc plastic
+										miễn ph&iacute; đến 99%</strong> (trừ s&aacute;ch b&igrave;a cứng, s&aacute;ch
+									dạng hộp - dạng đặc biệt, s&aacute;ch khổ qu&aacute; to, ...)</span></span>
+						</p>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span
+									style="font-size:12px;">Ngo&agrave;i ra, với h&igrave;nh thức <strong>Giao
+										h&agrave;ng thu tiền tận nơi</strong> v&agrave; <strong>Đổi h&agrave;ng trong
+										v&ograve;ng 7 ng&agrave;y</strong> nếu s&aacute;ch c&oacute; bất kỳ lỗi
+									n&agrave;o trong qu&aacute; tr&igrave;nh in ấn sẽ gi&uacute;p Qu&yacute;
+									kh&aacute;ch y&ecirc;n t&acirc;m hơn khi mua sắm tại Nobita.vn</span></span>
+						</p>
+						<div>
+							&nbsp;</div>
+						<p style="text-align: center;">
+							&nbsp;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+ 
+ </div>
+</body>
+</html>

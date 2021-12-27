@@ -1,0 +1,1535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"											>
+
+<head>
+	
+
+	<title>Website Mua Sách Online Được Yêu Thích Nhất</title>	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+	<meta name="description" content="Mua sách online với giá và dịch vụ tốt nhất tại  Nobita.vn. Giao hàng thu tiền tân nơi, bọc Plastic miễn phí, đổi trả hàng nhanh chóng,..." />
+
+	<meta name="keywords" content="nobita.vn, nobita, mua sách online, nhà sách trên mạng, nhà sách trực tuyến, sách bán chạy" />
+
+	<meta name="generator" content="Mua sách online với giá và dịch vụ tốt nhất tại  Nobita.vn. Giao hàng thu tiền tân nơi, bọc Plastic miễn phí, đổi trả hàng nhanh chóng,..." />
+
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+
+	<meta name="Copyright" content="Design A web."/>
+
+	<link rel="shortcut icon" href="/web/css/Images/slideImage/favicon.ico"/>
+
+	<link type="text/css" href="/web/css/styles.css" rel="stylesheet" />
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"  rel="stylesheet"/>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet"/>
+	
+	
+     
+   
+
+
+	<link type="text/css" href="/web/css/styles.resolution.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="/web/css/boxy.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/web/css/responsive.css" />
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/jquery-1.8.2.min.js"></script>
+
+	<script src="/web/vendor/bootstrap/js/jquery.min.js"></script>
+
+	<script type="text/javascript" src="/web/vendor/bootstrap/js/common.js"></script>
+
+	<script type='text/javascript' src='/web/vendor/bootstrap/js/jquery.boxy.js'></script>
+
+<!-- 	<script type="text/javascript">var app = '';</script> -->
+
+	<link href="/web/css/home.css" type="text/css" rel="stylesheet" />
+
+
+	
+	
+</head>
+		
+<body>
+
+  <div id="main_contener">
+
+		
+
+		<div id="header">
+
+			<div class="top_header">
+
+				<div id="container">
+					<span class="menumobile" style="font-size:30px;cursor:pointer; display: none;"
+						onclick="openNav()">&#9776;</span>
+					<div class="mainlogo">
+
+						<div class="block banner " id="banner_mainlogo">
+							<div class="blockcontent"><a href="/banners/view/1/logo-chinh.html" title="Logo chính"
+									target="_self"><img src="/web/css/Images/slideImage/logo.png" border="0"
+										title="Logo chính" width="220" height="44"></a></div>
+						</div>
+
+					</div>
+					<div class="car-mb">
+						<a href="/orders/checkout/index.html" title="GIỎ HÀNG CỦA TÔI">
+							<div class="textlable" title="Giỏ hàng">
+								<i class="fa fa-shopping-cart"></i> (<span class="shownumber">0</span>)
+							</div>
+						</a>
+					</div>
+					<div class="search-mb">
+						<i class="fa fa-search"></i>
+					</div>
+
+
+
+					<div class="rightheader">
+
+						<div class="search">
+
+							<form action="/products/search/index.html" onsubmit="return checksearch();" method="get">
+
+								<table width="100%" cellpadding="0" cellspacing="0">
+
+									<tr>
+
+										<td class="input" width="100%">
+
+											<input type="text" value="" name="keyword" id="keyword" size="10"
+												class="inputfield" title="Tìm" autocomplete="off"
+												onfocus="clearText(this)" onblur="clearText(this)" />
+
+										</td>
+
+										<td class="search-submit" nowrap="nowrap" width="40">
+
+											<input type="submit" value="Tìm" alt="Tìm">
+
+											<input type="hidden" name="productid" id="productid" value="0" />
+
+										</td>
+
+									</tr>
+
+								</table>
+
+							</form>
+
+							<div class="autocomplete" id="autocomplete"></div>
+
+						</div>
+
+						<div class="shoptool">
+
+							<ul class="right_topbar">
+
+								<li>
+
+									<div class="textlable" title="Tài khoản của bạn">
+
+										Tài khoản của bạn<i class="fa fa-sort-desc"></i>
+
+									</div>
+
+									<div class="subcontent">
+
+										<div class="buttom">
+											<div><a href="javascript:" class="btn_face"
+													onclick="checkLoginState();"></a></div>
+											<div><a class="btn_login" href="/users/login/index.html">Đăng nhập</a></div>
+											<div align="center" class="loginlink">
+												Khách hàng mới? <a href="/users/register/index.html">Tạo tài khoản</a>
+											</div>
+										</div>
+										<script>function testAPI(response) { var accessToken = response.authResponse.accessToken; FB.api('/me', function (response) { url = '/users/loginopenid/1/index.html'; url = addQuery(url, 'fid=' + response.id); url = addQuery(url, 'access_token=' + accessToken); document.location.href = url; }); } function checkLoginState() { FB.getLoginStatus(function (response) { if (response.status === 'connected') { testAPI(response); } else { FB.login(function (response) { if (response.authResponse) { if (response.status) { testAPI(response); } } }, { scope: 'public_profile,email' }); } }); } window.fbAsyncInit = function () { FB.init({ appId: '368970956612542', cookie: true, xfbml: true, version: 'v2.1' }); };</script>
+
+									</div>
+
+								</li>
+
+								<li>
+
+									<div class="textlable" title="Giỏ hàng">
+
+										Giỏ hàng (<span class="shownumber">0</span>)
+
+										<i class="fa fa-sort-desc"></i>
+
+									</div>
+
+									<div class="subcontent">
+
+										<h3>Giỏ hàng</h3>
+
+										<div id="cartslist">
+
+										</div>
+
+										<div class="buttom" id="showcartlink">
+
+											<a class="cartlink" href="/orders/carts/gio-hang.html"
+												title="GIỎ HÀNG CỦA TÔI">
+
+												Xem giỏ hàng<i class="fa fa-play"></i></a>
+
+										</div>
+
+									</div>
+
+								</li>
+
+							</ul>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+				</div>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<div id="mainmenu">
+
+				<div id="container">
+
+					<div class="mainmenu_contener">
+
+						<div class="mainmenu">
+
+							<span class="while"></span>
+
+							<span>
+								<h2><i class="fa fa-bars"></i>Danh mục sản phẩm</h2>
+							</span>
+							<ul class="submenu0" id="submenu0"><li class="group"><a href="javascript:" class="havechild" 4>Nổi bật</a><ul class="submenu1" id="submenu1"><li><a href="/sach-ban-chay.html" target="_self">Sách bán chạy</a></li><li><a href="/sach-moi.html" target="_self">Sách mới</a></li><li><a href="/sach-sap-phat-hanh.html" target="_self">Sắp phát hành</a></li><li><a href="/sach-giam-gia.html" target="_self">Sách giảm giá</a></li></ul></li><li><a href="/danh-muc/1/sach-kinh-te.html" class="havechild" 8 target="_self">Sách kinh tế</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/18/tai-chinh-ke-toan.html" target="_self">Tài chính - Kế toán</a></li><li><a href="/danh-muc/17/quan-tri-lanh-dao.html" target="_self">Quản trị - Lãnh đạo</a></li><li><a href="/danh-muc/16/marketing-ban-hang.html" target="_self">Marketing - Bán hàng</a></li><li><a href="/danh-muc/15/ky-nang-lam-viec.html" target="_self">Kỹ năng làm việc</a></li><li><a href="/danh-muc/13/kinh-te-hoc.html" target="_self">Kinh tế học</a></li><li><a href="/danh-muc/12/khoi-nghiep.html" target="_self">Khởi nghiệp</a></li><li><a href="/danh-muc/11/doanh-nhan-tap-doan.html" target="_self">Doanh nhân - Tập đoàn</a></li><li><a href="/danh-muc/10/bai-hoc-kinh-doanh.html" target="_self">Bài học kinh doanh</a></li></ul></li><li><a href="/danh-muc/2/van-hoc-nuoc-ngoai.html" class="havechild" 9 target="_self">Văn học nước ngoài</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/25/tieu-su-hoi-ky.html" target="_self">Tiểu sử - Hồi ký</a></li><li><a href="/danh-muc/24/truyen-lich-su-kiem-hiep.html" target="_self">Truyện lịch sử - Kiếm hiệp</a></li><li><a href="/danh-muc/23/truyen-ngan-tan-van.html" target="_self">Truyện ngắn - Tản văn</a></li><li><a href="/danh-muc/22/tac-pham-kinh-dien.html" target="_self">Tác phẩm kinh điển</a></li><li><a href="/danh-muc/21/huyen-bi-gia-tuong.html" target="_self">Huyền bí - Giả tưởng</a></li><li><a href="/danh-muc/20/truyen-trinh-tham-kinh-di.html" target="_self">Truyện trinh thám - Kinh dị</a></li><li><a href="/danh-muc/19/tieu-thuyet-tinh-cam-lang-man.html" target="_self">Tiểu thuyết tình cảm - Lãng mạn</a></li><li><a href="/danh-muc/14/tieu-thuyet-dam-my.html" target="_self">Tiểu thuyết đam mỹ</a></li><li><a href="/danh-muc/68/bach-hop.html" target="_self">Bách Hợp</a></li></ul></li><li><a href="/danh-muc/3/van-hoc-trong-nuoc.html" class="havechild" 6 target="_self">Văn học trong nước</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/26/tieu-thuyet.html" target="_self">Tiểu thuyết</a></li><li><a href="/danh-muc/27/truyen-ngan-tan-van.html" target="_self">Truyện ngắn - Tản văn</a></li><li><a href="/danh-muc/57/huyen-bi-gia-tuong.html" target="_self">Huyền bí - Giả tưởng</a></li><li><a href="/danh-muc/58/phong-su-ky-su.html" target="_self">Phóng sự - Ký sự</a></li><li><a href="/danh-muc/3/trinh-tham-kinh-di.html" target="_self">Trinh thám - Kinh dị</a></li><li><a href="/danh-muc/3/tieu-su-hoi-ky.html" target="_self">Tiểu sử - Hồi Ký</a></li></ul></li><li><a href="/danh-muc/4/sach-ki-nang-song.html" class="havechild" 2 target="_self">Sách kĩ năng sống</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/41/ky-nang-song.html" target="_self">Kỹ năng sống</a></li><li><a href="/danh-muc/56/nghe-thuat-song-dep.html" target="_self">Nghệ thuật sống đẹp</a></li></ul></li><li><a href="/danh-muc/5/sach-tuoi-teen.html" class="havechild" 4 target="_self">Sách tuổi teen</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/30/van-hoc-teen.html" target="_self">Văn học teen</a></li><li><a href="/danh-muc/29/huong-nghiep-ky-nang.html" target="_self">Hướng nghiệp - kỹ năng</a></li><li><a href="/danh-muc/64/light-novel.html" target="_self">Light Novel</a></li><li><a href="/danh-muc/69/truyen-tranh-comic.html" target="_self">Truyện tranh, Comic</a></li></ul></li><li><a href="/danh-muc/6/hoc-ngoai-ngu.html" class="havechild" 4 target="_self">Học ngoại ngữ</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/47/tu-dien.html" target="_self">Từ điển</a></li><li><a href="/danh-muc/48/sach-hoc-tieng-anh.html" target="_self">Sách học tiếng Anh</a></li><li><a href="/danh-muc/50/sach-hoc-tieng-hoa.html" target="_self">Sách học tiếng Hoa</a></li><li><a href="/danh-muc/49/sach-hoc-tieng-nhat.html" target="_self">Sách học tiếng Nhật</a></li></ul></li><li><a href="/danh-muc/7/sach-thieu-nhi.html" class="havechild" 5 target="_self">Sách thiếu nhi</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/31/truyen-co-tich-than-thoai.html" target="_self">Truyện cổ tích - Thần thoại</a></li><li><a href="/danh-muc/33/vua-hoc-vua-choi.html" target="_self">Vừa học vừa chơi</a></li><li><a href="/danh-muc/32/kien-thuc-ki-nang.html" target="_self">Kiến thức - Kĩ năng</a></li><li><a href="/danh-muc/7/van-hoc.html" target="_self">Văn học</a></li><li><a href="/truyen-ke-cho-be.html" target="">Truyện kể cho bé</a></li></ul></li><li><a href="/danh-muc/8/thuong-thuc-doi-song.html" class="havechild" 5 target="_self">Thương thức đời sống</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/53/van-hoa-du-lich.html" target="_self">Văn hóa - Du lịch</a></li><li><a href="/danh-muc/42/cham-soc-suc-khoe.html" target="_self">Chăm sóc sức khỏe</a></li><li><a href="/danh-muc/45/phong-thuy-nha-cua.html" target="_self">Phong thủy - Nhà cửa</a></li><li><a href="/danh-muc/43/nau-an.html" target="_self">Nấu ăn</a></li><li><a href="/danh-muc/55/the-thao-giai-tri.html" target="_self">Thể thao - Giải trí</a></li></ul></li><li><a href="/danh-muc/9/sach-chuyen-nganh.html" class="havechild" 10 target="_self">Sách chuyên ngành</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/36/giao-duc.html" target="_self">Giáo dục</a></li><li><a href="/danh-muc/35/cong-nghe-thong-tin.html" target="_self">Công nghệ thông tin</a></li><li><a href="/danh-muc/38/lich-su-dia-ly.html" target="_self">Lịch sử - Địa lý</a></li><li><a href="/danh-muc/37/khoa-hoc-tu-nhien.html" target="_self">Khoa học tự nhiên</a></li><li><a href="/danh-muc/39/my-thuat-kien-truc.html" target="_self">Mỹ thuật - Kiến trúc</a></li><li><a href="/danh-muc/34/chinh-tri-triet-hoc.html" target="_self">Chính trị - Triết học</a></li><li><a href="/danh-muc/9/danh-nhan-nguoi-noi-tieng.html" target="_self">Danh nhân - Người nổi tiếng</a></li><li><a href="/danh-muc/9/tam-linh-ton-giao.html" target="_self">Tâm linh - Tôn giáo</a></li><li><a href="/danh-muc/40/y-duoc.html" target="_self">Y dược</a></li><li><a href="/danh-muc/9/khoa-hoc-xa-hoi.html" target="_self">Khoa học xã hội</a></li></ul></li><li><a href="/danh-muc/51/van-phong-pham-qua-tang.html" class="havechild" 3 target="_self">Văn Phòng Phẩm - Quà Tặng</a><ul class="submenu1" id="submenu1"><li><a href="/danh-muc/70/bop-viet-hop-but.html" target="_self">Bóp Viết - Hộp Bút</a></li><li><a href="/danh-muc/71/binh-nuoc-binh-giu-nhiet.html" target="_self">Bình Nước, Bình Giữ Nhiệt</a></li><li><a href="/danh-muc/72/phu-kien-qua-tang.html" target="_self">Phụ Kiện, Quà Tặng</a></li></ul></li><li class="-bold"><a href="/Cong-ty-phat-hanh.html" class="havechild" 0 target="_self">Công ty phát hành</a><ul class="submenubig" id="submenu1"><li class="-bold"><a href="/thuong-hieu/4/thai-ha.html">Thái Hà</a></li><li class="-bold"><a href="/thuong-hieu/6/bach-viet.html">Bách Việt</a></li><li class="-bold"><a href="/thuong-hieu/33/alphabooks.html">Alphabooks</a></li><li class="-bold"><a href="/thuong-hieu/34/nha-nam.html">Nhã Nam</a></li><li class="-bold"><a href="/thuong-hieu/35/owlbooks.html">Owlbooks</a></li><li class="-bold"><a href="/thuong-hieu/36/cam-phong.html">Cẩm Phong</a></li><li class="-bold"><a href="/thuong-hieu/37/quang-van.html">Quảng Văn</a></li><li class="-bold"><a href="/thuong-hieu/38/van-viet.html">Văn Việt</a></li><li class="-bold"><a href="/thuong-hieu/39/limbooks.html">Limbooks</a></li><li class="-bold"><a href="/thuong-hieu/40/skybooks.html">Skybooks</a></li><li class="-bold"><a href="/thuong-hieu/41/asbooks.html">Asbooks</a></li><li class="-bold"><a href="/thuong-hieu/42/amak.html">Amak</a></li><li class="-bold"><a href="/thuong-hieu/43/dinh-ti.html">Đinh Tị</a></li><li class="-bold"><a href="/thuong-hieu/44/pavicobooks.html">Pavicobooks</a></li><li class="-bold"><a href="/thuong-hieu/45/phuong-nam.html">Phương Nam</a></li><li class="-bold"><a href="/thuong-hieu/46/dong-a.html">Đông A</a></li><li class="-bold"><a href="/thuong-hieu/47/van-lang.html">Văn Lang</a></li><li class="-bold"><a href="/thuong-hieu/48/nguoi-tre-viet.html">Người Trẻ Việt</a></li><li class="-bold"><a href="/thuong-hieu/49/lantabra.html">Lantabra</a></li><li class="-bold"><a href="/thuong-hieu/50/nxb-kim-dong.html">NXB Kim Đồng</a></li><li class="-bold"><a href="/thuong-hieu/51/nxb-tre.html">NXB Trẻ</a></li><li class="publishmore"><a href="/Cong-ty-phat-hanh.html">Tất cả công ty phát hành</a></li></ul></li></ul>
+
+						</div>
+
+						<div class="hotline">
+
+							<div class="block " id="content_SupportOnline">
+								<div class="blockcontent">
+									<div>
+										<strong><span style="color:#000000;"><span
+													style="font-size:14px;">Hotline:&nbsp;</span></span></strong><span
+											style="color:#ff0000;"><b
+												style="box-sizing: border-box; color: rgb(0, 204, 102); font-family: Verdana, Arial, Helvetica, sans-serif;">0938
+												424 289</b></span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div id="container">
+        
+       
+  
+		</div>
+
+		<div class="clear"></div>
+
+		<script language="javascript" type="text/javascript">
+		     
+					type = "text/javascript" > function checksearch() {
+						kw = gde("keyword");
+						if (kw.value == "" || kw.value == "Tìm...") {
+							Boxy.alert("Vui lòng nhập từ khóa để tìm kiếm", null, {
+								title: 'Thông báo'
+							});
+							kw.focus();
+							return false;
+						}
+					}
+
+					function clearText(field) {
+						if (field.defaultValue == field.value) field.value = '';
+						else if (field.value == '') field.value = field.defaultValue;
+					}
+					$(document).mouseup(function(e) {
+						var container = $(".search");
+						if (!container.is(e.target) && container.has(e.target).length === 0) {
+							$("#autocomplete").hide();
+						}
+					});
+					$(document).keydown(function(e) {
+						if (e.which == 38 || e.which == 40) {
+							var pid = 0;
+							var pvalue = 0;
+							var active = 0;
+							if ($('#autocomplete').length > 0) {
+								i = 0;
+								$(".vsmall_products").each(function(index) {
+									if ($(this).hasClass("headerpactive")) {
+										pid = i;
+										active = 1;
+										$(this).removeClass("headerpactive");
+									}
+									i++;
+								});
+								if (e.which == 38) {
+									pid--;
+								}
+								if (e.which == 40 && active == 1) {
+									pid++;
+								}
+								if (pid < 0) {
+									$("#productid").val(0);
+								}
+								if (pid == i) {
+									$("#productid").val(0);
+								}
+								i = 0;
+								$(".vsmall_products").each(function(index) {
+									if (pid == i) {
+										$("#productid").val(this.id);
+										$(this).addClass("headerpactive");
+									}
+									i++;
+								});
+							}
+							e.preventDefault();
+						}
+					});
+					$("#keyword").keyup(function(e) {
+						if (e.which == 38 || e.which == 40) {
+							return true;
+						}
+						kw = gde("keyword");
+						if (kw == '') {
+							$("#autocomplete").hide();
+							return true;
+						}
+						address = '/home/autocomplete/index.html';
+						address = addQuery(address, 'keywords=' + kw.value);
+						$.ajax({
+							url: address,
+							dataType: "html",
+							type: "GET",
+							cache: false,
+							error: function(e) {
+								Boxy.alert('Lỗi cc', null, {
+									title: 'Lỗi'
+								});
+								return false;
+							},
+							success: function(data) {
+								if (data) {
+									$("#autocomplete").empty();
+									$("#autocomplete").append(data);
+									$('#autocomplete').stop(true, true).slideDown("normal");
+								} else {
+									$("#autocomplete").hide();
+								}
+							}
+						});
+					});
+
+					function getcartnumber() {
+						address = '/home/cartnumber/index.html';
+						$.ajax({
+							url: address,
+							dataType: "json",
+							type: "GET",
+							cache: false,
+							error: function(e) {
+								Boxy.alert('Lỗi xx', null, {
+									title: 'Thông báo'
+								});
+								return;
+							},
+							success: function(data) {
+								$('.shownumber').empty();
+								$('.shownumber').append(data.id);
+								if (data.id > 0) {
+									getcartslist();
+								} else {
+									$('#showcartlink').hide();
+									$('#cartslist').empty();
+									$('#cartslist').append('<span class="empty">Giỏ hàng chưa có sản phẩm</span>');
+								}
+							}
+						});
+					}
+
+					function getcartslist() {
+						address = '/home/cartslist/index.html';
+						$.ajax({
+							url: address,
+							dataType: "html",
+							type: "GET",
+							cache: false,
+							error: function(e) {
+								Boxy.alert('Lỗi ll', null, {
+									title: 'Lỗi'
+								});
+								return false;
+							},
+							success: function(data) {
+								if (data) {
+									$("#cartslist").empty();
+									$("#cartslist").append(data);
+								} else {
+									$('#showcartlink').hide();
+									$('#cartslist').empty();
+									$('#cartslist').append('<span class="empty">Giỏ hàng chưa có sản phẩm</span>');
+								}
+								return true;
+							}
+						});
+					}
+
+					function delecart(id, pid) {
+						address = '/home/delete/index.html';
+						address = addQuery(address, 'id=' + id);
+						$.ajax({
+							url: address,
+							dataType: "json",
+							type: "GET",
+							cache: false,
+							error: function(e) {
+								Boxy.alert('Lỗi pp', null, {
+									title: 'Thông báo'
+								});
+								return;
+							},
+							success: function(data) {
+								if (data.id > 0) {
+									getcartnumber();
+								} else {
+									Boxy.alert('Lỗi hh', null, {
+										title: 'Thông báo'
+									});
+								}
+							}
+						});
+					}
+					$(function() {
+						$('.cartlink').boxy({
+							ovlay: true,
+							unloadOnHide: true
+						});
+						getcartnumber();
+					}); 
+		
+		</script>
+
+
+
+
+
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<div class="mainmenu-mb">
+
+				<span class="while"></span>
+
+				<span>
+					<h2><i class="fa fa-bars"></i>Danh mục sản phẩm</h2>
+				</span>
+				<ul class="submenu0" id="submenu0">
+					<li class="group">
+					  <a href="javascript:" class="havechild" 4>Nổi bật</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/sach-ban-chay.html" target="_self">Sách bán chạy</a>
+						</li>
+						<li>
+						  <a href="/sach-moi.html" target="_self">Sách mới</a>
+						</li>
+						<li>
+						  <a href="/sach-sap-phat-hanh.html" target="_self">Sắp phát hành</a>
+						</li>
+						<li>
+						  <a href="/sach-giam-gia.html" target="_self">Sách giảm giá</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/1/sach-kinh-te.html" class="havechild" 8 target="_self">Sách kinh tế</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/18/tai-chinh-ke-toan.html" target="_self">Tài chính - Kế toán</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/17/quan-tri-lanh-dao.html" target="_self">Quản trị - Lãnh đạo</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/16/marketing-ban-hang.html" target="_self">Marketing - Bán hàng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/15/ky-nang-lam-viec.html" target="_self">Kỹ năng làm việc</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/13/kinh-te-hoc.html" target="_self">Kinh tế học</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/12/khoi-nghiep.html" target="_self">Khởi nghiệp</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/11/doanh-nhan-tap-doan.html" target="_self">Doanh nhân - Tập đoàn</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/10/bai-hoc-kinh-doanh.html" target="_self">Bài học kinh doanh</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/2/van-hoc-nuoc-ngoai.html" class="havechild" 9 target="_self">Văn học nước ngoài</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/25/tieu-su-hoi-ky.html" target="_self">Tiểu sử - Hồi ký</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/24/truyen-lich-su-kiem-hiep.html" target="_self">Truyện lịch sử - Kiếm hiệp</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/23/truyen-ngan-tan-van.html" target="_self">Truyện ngắn - Tản văn</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/22/tac-pham-kinh-dien.html" target="_self">Tác phẩm kinh điển</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/21/huyen-bi-gia-tuong.html" target="_self">Huyền bí - Giả tưởng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/20/truyen-trinh-tham-kinh-di.html" target="_self">Truyện trinh thám - Kinh dị</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/19/tieu-thuyet-tinh-cam-lang-man.html" target="_self">Tiểu thuyết tình cảm - Lãng mạn</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/14/tieu-thuyet-dam-my.html" target="_self">Tiểu thuyết đam mỹ</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/68/bach-hop.html" target="_self">Bách Hợp</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/3/van-hoc-trong-nuoc.html" class="havechild" 6 target="_self">Văn học trong nước</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/26/tieu-thuyet.html" target="_self">Tiểu thuyết</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/27/truyen-ngan-tan-van.html" target="_self">Truyện ngắn - Tản văn</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/57/huyen-bi-gia-tuong.html" target="_self">Huyền bí - Giả tưởng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/58/phong-su-ky-su.html" target="_self">Phóng sự - Ký sự</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/3/trinh-tham-kinh-di.html" target="_self">Trinh thám - Kinh dị</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/3/tieu-su-hoi-ky.html" target="_self">Tiểu sử - Hồi Ký</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/4/sach-ki-nang-song.html" class="havechild" 2 target="_self">Sách kĩ năng sống</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/41/ky-nang-song.html" target="_self">Kỹ năng sống</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/56/nghe-thuat-song-dep.html" target="_self">Nghệ thuật sống đẹp</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/5/sach-tuoi-teen.html" class="havechild" 4 target="_self">Sách tuổi teen</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/30/van-hoc-teen.html" target="_self">Văn học teen</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/29/huong-nghiep-ky-nang.html" target="_self">Hướng nghiệp - kỹ năng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/64/light-novel.html" target="_self">Light Novel</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/69/truyen-tranh-comic.html" target="_self">Truyện tranh, Comic</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/6/hoc-ngoai-ngu.html" class="havechild" 4 target="_self">Học ngoại ngữ</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/47/tu-dien.html" target="_self">Từ điển</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/48/sach-hoc-tieng-anh.html" target="_self">Sách học tiếng Anh</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/50/sach-hoc-tieng-hoa.html" target="_self">Sách học tiếng Hoa</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/49/sach-hoc-tieng-nhat.html" target="_self">Sách học tiếng Nhật</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/7/sach-thieu-nhi.html" class="havechild" 5 target="_self">Sách thiếu nhi</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/31/truyen-co-tich-than-thoai.html" target="_self">Truyện cổ tích - Thần thoại</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/33/vua-hoc-vua-choi.html" target="_self">Vừa học vừa chơi</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/32/kien-thuc-ki-nang.html" target="_self">Kiến thức - Kĩ năng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/7/van-hoc.html" target="_self">Văn học</a>
+						</li>
+						<li>
+						  <a href="/truyen-ke-cho-be.html" target="">Truyện kể cho bé</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/8/thuong-thuc-doi-song.html" class="havechild" 5 target="_self">Thương thức đời sống</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/53/van-hoa-du-lich.html" target="_self">Văn hóa - Du lịch</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/42/cham-soc-suc-khoe.html" target="_self">Chăm sóc sức khỏe</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/45/phong-thuy-nha-cua.html" target="_self">Phong thủy - Nhà cửa</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/43/nau-an.html" target="_self">Nấu ăn</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/55/the-thao-giai-tri.html" target="_self">Thể thao - Giải trí</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/9/sach-chuyen-nganh.html" class="havechild" 10 target="_self">Sách chuyên ngành</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/36/giao-duc.html" target="_self">Giáo dục</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/35/cong-nghe-thong-tin.html" target="_self">Công nghệ thông tin</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/38/lich-su-dia-ly.html" target="_self">Lịch sử - Địa lý</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/37/khoa-hoc-tu-nhien.html" target="_self">Khoa học tự nhiên</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/39/my-thuat-kien-truc.html" target="_self">Mỹ thuật - Kiến trúc</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/34/chinh-tri-triet-hoc.html" target="_self">Chính trị - Triết học</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/9/danh-nhan-nguoi-noi-tieng.html" target="_self">Danh nhân - Người nổi tiếng</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/9/tam-linh-ton-giao.html" target="_self">Tâm linh - Tôn giáo</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/40/y-duoc.html" target="_self">Y dược</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/9/khoa-hoc-xa-hoi.html" target="_self">Khoa học xã hội</a>
+						</li>
+					  </ul>
+					</li>
+					<li>
+					  <a href="/danh-muc/51/van-phong-pham-qua-tang.html" class="havechild" 3 target="_self">Văn Phòng Phẩm - Quà Tặng</a>
+					  <ul class="submenu1" id="submenu1">
+						<li>
+						  <a href="/danh-muc/70/bop-viet-hop-but.html" target="_self">Bóp Viết - Hộp Bút</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/71/binh-nuoc-binh-giu-nhiet.html" target="_self">Bình Nước, Bình Giữ Nhiệt</a>
+						</li>
+						<li>
+						  <a href="/danh-muc/72/phu-kien-qua-tang.html" target="_self">Phụ Kiện, Quà Tặng</a>
+						</li>
+					  </ul>
+					</li>
+					<li class="-bold">
+					  <a href="/Cong-ty-phat-hanh.html" class="havechild" 0 target="_self">Công ty phát hành</a>
+					  <ul class="submenubig" id="submenu1">
+						<li class="-bold">
+						  <a href="/thuong-hieu/4/thai-ha.html">Thái Hà</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/6/bach-viet.html">Bách Việt</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/33/alphabooks.html">Alphabooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/34/nha-nam.html">Nhã Nam</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/35/owlbooks.html">Owlbooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/36/cam-phong.html">Cẩm Phong</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/37/quang-van.html">Quảng Văn</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/38/van-viet.html">Văn Việt</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/39/limbooks.html">Limbooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/40/skybooks.html">Skybooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/41/asbooks.html">Asbooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/42/amak.html">Amak</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/43/dinh-ti.html">Đinh Tị</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/44/pavicobooks.html">Pavicobooks</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/45/phuong-nam.html">Phương Nam</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/46/dong-a.html">Đông A</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/47/van-lang.html">Văn Lang</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/48/nguoi-tre-viet.html">Người Trẻ Việt</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/49/lantabra.html">Lantabra</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/50/nxb-kim-dong.html">NXB Kim Đồng</a>
+						</li>
+						<li class="-bold">
+						  <a href="/thuong-hieu/51/nxb-tre.html">NXB Trẻ</a>
+						</li>
+						<li class="publishmore">
+						  <a href="/Cong-ty-phat-hanh.html">Tất cả công ty phát hành</a>
+						</li>
+					  </ul>
+					</li>
+				  </ul>
+
+			</div>
+		</div>
+
+
+		<script>function openNav() { document.getElementById("mySidenav").style.width = "300px"; } function closeNav() { document.getElementById("mySidenav").style.width = "0"; }</script>
+
+		<script>
+			$(document).ready(function () { $('.mainmenu-mb #submenu0 li').on('click', function () { $('.mainmenu-mb #submenu0 li').removeClass('active'); $(this).addClass('active'); }); $('.search-mb i').on('click', function () { $("#header .top_header .rightheader .search").removeClass('show'); $("#header .top_header .rightheader .search").addClass('show'); }); });</script>
+		<div id="container">
+			<div id="mainbanner">
+				<div class="mainbaner">
+					<link rel="stylesheet" href="/web/css/jquery.bxslider.css" type="text/css" />
+					<script type="text/javascript" src="/web/vendor/bootstrap/js/jquery.bxslider.js"></script>
+					<div id="slider-wrapper">
+						<ul class="bxslider">
+							<li><a href="/banners/view/125/sci-full.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/sci-2020.jpg" title="SCI FULL"></a></li>
+							<li><a href="/banners/view/124/the-vi-thuong.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/the-vi-thuong.jpg" title="The Vi Thuong"></a></li>
+							<li><a href="/banners/view/123/artemis-fowl.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/artemis.jpg" title="ARTEMIS FOWL"></a></li>
+							<li><a href="/banners/view/121/sci-tap-4.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/sci-tap-4.jpg" title="sci tap 4"></a></li>
+							<li><a href="/banners/view/120/artmis.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/atta.jpg" title="artmis"></a></li>
+							<li><a href="/banners/view/119/luc-xu.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/luc-xu-qc.jpg" title="luc xu"></a></li>
+							<li><a href="/banners/view/118/thoi-gian-vun-vo.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/thoi-gian-vun-vo.jpg" title="Thời Gian Vụn Vỡ"></a></li>
+							<li><a href="/banners/view/117/song-ngam.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/song-ngam.jpg" title="song ngam"></a></li>
+							<li><a href="/banners/view/122/doc-gia.html" target="_self"><img height="397"
+										src="/web/css/Images/slideImage/doc-gia-2019.jpg" title="độc giả"></a></li>
+						</ul>
+					</div>
+					<script
+						type="text/javascript">$(window).load(function () { $('.bxslider').bxSlider({ auto: true, infiniteLoop: true }); });</script>
+				</div>
+			</div>
+			<div class="sortable" id="layoutGroup1">
+				<div class="block" id="module_newproducts">
+
+					<h2>
+
+						<a class="title" href="/sach-moi.html" title="Sách mới">Sách mới<span
+								class="b-main__category-arrow"></span></a>
+
+						<a class="more" href="/sach-moi.html" title="Xem tất cả">Xem tất cả</a>
+
+					</h2>
+              
+					<div class="blockcontent">
+
+						<div class="newproducts"
+							style="position:relative; padding:0 20px; overflow:hidden; height:340px;">
+
+							<div id="ajaxncontainer">
+
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3562/cao-thu-doi-trang-thay-den-tap-3-ban-dac-biet-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)"><img
+													src="/web/css/Images/ImageBook/z2871139964170_a2b3fc38c7baf80ad3337b96a68f8d76__82350_thum_135.jpg"
+													alt="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)"
+													title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3562/cao-thu-doi-trang-thay-den-tap-3-ban-dac-biet-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - Tập 3 ( Bản đặc biệt)">Cao Thủ Đổi
+												Trắng Thay Đen - Tập 3 (...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1708/phong-thu-luu-ngoc.html"
+													title="Phong Thư Lưu Ngốc">Phong Thư Lưu Ngốc</a></span></div>
+
+
+										<div class="prices">389.000 ₫</div>
+
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3561/stadee-vi-em-khong-xung-.html"
+												title="Stadee Vì Em Không Xứng "><img
+													src="/web/css/Images/ImageBookl/z2871139956150_0a18ee362a5ae62c85a97f868b5d58c3__12972_thum_135.jpg"
+													alt="Stadee Vì Em Không Xứng "
+													title="Stadee Vì Em Không Xứng " /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3561/stadee-vi-em-khong-xung-.html"
+												title="Stadee Vì Em Không Xứng ">Stadee Vì Em Không Xứng</a>
+										</div>
+										<div class="fields"></div>
+
+
+										<div class="prices">310.000 ₫</div>
+
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3560/nam-dinh-vi-coc-tap-5-ban-ban-dac-biet-.html"
+												title="Nam Đình Vi Cốc  tập 5 ( Bản bản đặc biệt)"><img
+													src="/web/css/Images/ImageBookn/z2871129262716_6240215d884aa0c8368d8d2a17fbea66__48681_thum_135.jpg"
+													alt="Nam Đình Vi Cốc  tập 5 ( Bản bản đặc biệt)"
+													title="Nam Đình Vi Cốc  tập 5 ( Bản bản đặc biệt)" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3560/nam-dinh-vi-coc-tap-5-ban-ban-dac-biet-.html"
+												title="Nam Đình Vi Cốc  tập 5 ( Bản bản đặc biệt)">Nam Đình Vi Cốc tập 5
+												( Bản bản đặc...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1694/mac-phi.html"
+													title="Mặc Phi">Mặc Phi</a></span></div>
+
+
+										<div class="prices">179.000 ₫</div>
+
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3559/khong-co-kiep-sau-tap-2-ban-dac-biet.html"
+												title="Không Có Kiếp Sau - Tập 2 bản đặc biệt"><img
+													src="/web/css/Images/ImageBookw/ko-co-ks__50487_thum_135.jpg"
+													alt="Không Có Kiếp Sau - Tập 2 bản đặc biệt"
+													title="Không Có Kiếp Sau - Tập 2 bản đặc biệt" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3559/khong-co-kiep-sau-tap-2-ban-dac-biet.html"
+												title="Không Có Kiếp Sau - Tập 2 bản đặc biệt">Không Có Kiếp Sau - Tập 2
+												bản đặc...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1664/nguyet-ha-tang.html"
+													title="Nguyệt Hạ Tang">Nguyệt Hạ Tang</a></span></div>
+
+
+										<div class="prices">269.000 ₫</div>
+
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3558/husky-va-su-ton-meo-trang-cua-han-tap-2-ban-dac-biet.html"
+												title="HUSKY VÀ SƯ TÔN MÈO TRẮNG CỦA HẮN (Tập 2) - Bản đặc biệt"><img
+													src="/web/css/Images/ImageBookw/husly-2db__88661_thum_135.jpg"
+													alt="HUSKY VÀ SƯ TÔN MÈO TRẮNG CỦA HẮN (Tập 2) - Bản đặc biệt"
+													title="HUSKY VÀ SƯ TÔN MÈO TRẮNG CỦA HẮN (Tập 2) - Bản đặc biệt" /></a>
+
+										</div>
+										<div class="productname">
+											<a href="/3558/husky-va-su-ton-meo-trang-cua-han-tap-2-ban-dac-biet.html"
+												title="HUSKY VÀ SƯ TÔN MÈO TRẮNG CỦA HẮN (Tập 2) - Bản đặc biệt">HUSKY
+												VÀ SƯ TÔN MÈO TRẮNG CỦA HẮN...</a>
+										</div>
+										<div class="fields"> <span><a
+													href="/thuong-hieu/1744/nhuc-bao-bat-cat-nhuc.html"
+													title="Nhục Bao Bất Cật Nhục">Nhục Bao Bất Cật Nhục</a></span></div>
+
+
+										<div class="prices">269.000 ₫</div>
+
+									</div>
+								</div>
+
+							</div>
+
+							<div class="clear"></div>
+
+							<div class="list_btn">
+
+								<a onclick="showproduct(-1);" id="prevn" class="prev" href="javascript:"><i
+										class="fa fa-chevron-left"></i></a>
+
+								<a onclick="showproduct(1);" id="nextn" class="next" href="javascript:"><i
+										class="fa fa-chevron-right"></i></a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+					<script>var pagen = 1; var countn = 4; $("#prevn").addClass("disable"); if (countn <= 1) $("#nextn").addClass("ndisable"); function showproduct(step) { if ((pagen == 1 && step == -1) || (pagen == countn && step == 1)) return; pagen = pagen + step; if (pagen < 1) { pagen = 1; } if (pagen == 1) { $("#prevn").addClass("disable"); } else { $("#prevn").removeClass("disable"); } if (pagen == countn || pagen > countn) { $("#nextn").addClass("ndisable"); } else { $("#nextn").removeClass("ndisable"); } address = '/home/newproducts/index.html'; address = addQuery(address, 'page=' + pagen); $.ajax({ url: address, dataType: "html", type: "GET", cache: false, error: function (e) { Boxy.alert('Lỗi clm', null, { title: 'Lỗi' }); return false; }, success: function (data) { $("#ajaxncontainer").empty(); $("#ajaxncontainer").append(data); i = 0; if (step == 1) { $(".hide").each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } else { $($(".hide").get().reverse()).each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } return true; } }); }</script>
+
+				</div>
+
+
+				<div class="block" id="module_publishing">
+
+					<h2>
+
+						<a class="title" href="/sach-sap-phat-hanh.html" title="Sắp phát hành">Sắp phát hành<span
+								class="b-main__category-arrow"></span></a><a class="more"
+							href="/sach-sap-phat-hanh.html" title="Xem tất cả">Xem tất cả</a>
+
+					</h2>
+
+					<div class="blockcontent">
+
+						<div class="publishing"
+							style="position:relative; padding:0 20px; overflow:hidden; height:340px">
+
+							<div id="ajaxcontainer">
+
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3569/ma-ton-cung-muon-biet-tap-2-ban-thuong-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)"><img
+													src="/web/css/Images/ImageBooko/bia1_ma-ton-cung-muon-biet-tap-2__16002_thum_135.jpg"
+													alt="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)"
+													title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3569/ma-ton-cung-muon-biet-tap-2-ban-thuong-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)">Ma Tôn Cũng Muốn
+												Biết - Tập 2 ( bản...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1450/thanh-sac-vu-duc.html"
+													title="Thanh Sắc Vũ Dực">Thanh Sắc Vũ Dực</a></span></div>
+
+
+										<div class="prices">135.200 ₫</div>
+										<div class="rootprice">169.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3568/ma-ton-cung-muon-biet-tap-2-ban-dac-biet-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)"><img
+													src="/web/css/Images/ImageBookh/pr-ngang__01691_thum_135.jpg"
+													alt="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)"
+													title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3568/ma-ton-cung-muon-biet-tap-2-ban-dac-biet-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)">Ma Tôn Cũng Muốn
+												Biết - Tập 2 ( bản...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1450/thanh-sac-vu-duc.html"
+													title="Thanh Sắc Vũ Dực">Thanh Sắc Vũ Dực</a></span></div>
+
+
+										<div class="prices">207.200 ₫</div>
+										<div class="rootprice">259.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3567/artemis-fowl-tron-bo-8-tap-tang-kem-bo-postcard-.html"
+												title="Artemis Fowl  (trọn bộ 8 tập tặng kèm bộ postcard)"><img
+													src="/web/css/Images/ImageBooka/247444931_449003249891943_3849498203320585816_n__61426_thum_135.jpg"
+													alt="Artemis Fowl  (trọn bộ 8 tập tặng kèm bộ postcard)"
+													title="Artemis Fowl  (trọn bộ 8 tập tặng kèm bộ postcard)" /></a>
+											<span class="saleprice">-40%</span>
+										</div>
+										<div class="productname">
+											<a href="/3567/artemis-fowl-tron-bo-8-tap-tang-kem-bo-postcard-.html"
+												title="Artemis Fowl  (trọn bộ 8 tập tặng kèm bộ postcard)">Artemis Fowl
+												(trọn bộ 8 tập tặng kèm...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1505/eoin-colfer.html"
+													title="Eoin Colfer">Eoin Colfer</a></span></div>
+
+
+										<div class="prices">630.000 ₫</div>
+										<div class="rootprice">1.050.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3566/artemis-fowl-tap-78-kem-8-postcard-.html"
+												title="Artemis Fowl  tập 7.8 ( kèm 8 postcard)"><img
+													src="/web/css/Images/ImageBooks/246051730_611306283401410_7873746748316217488_n__97958_thum_135.jpg"
+													alt="Artemis Fowl  tập 7.8 ( kèm 8 postcard)"
+													title="Artemis Fowl  tập 7.8 ( kèm 8 postcard)" /></a>
+											<span class="saleprice">-35%</span>
+										</div>
+										<div class="productname">
+											<a href="/3566/artemis-fowl-tap-78-kem-8-postcard-.html"
+												title="Artemis Fowl  tập 7.8 ( kèm 8 postcard)">Artemis Fowl tập 7.8 (
+												kèm 8 postcard)</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1505/eoin-colfer.html"
+													title="Eoin Colfer">Eoin Colfer</a></span></div>
+
+
+										<div class="prices">182.000 ₫</div>
+										<div class="rootprice">280.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3565/artemis-fowl-nghich-ly-thoi-gian-.html"
+												title="Artemis Fowl Nghịch Lý Thời Gian "><img
+													src="/web/css/Images/ImageBookh/bia-1-01__51524_thum.jpg"
+													alt="Artemis Fowl Nghịch Lý Thời Gian "
+													title="Artemis Fowl Nghịch Lý Thời Gian " /></a>
+											<span class="saleprice">-30%</span>
+										</div>
+										<div class="productname">
+											<a href="/3565/artemis-fowl-nghich-ly-thoi-gian-.html"
+												title="Artemis Fowl Nghịch Lý Thời Gian ">Artemis Fowl Nghịch Lý Thời
+												Gian</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1505/eoin-colfer.html"
+													title="Eoin Colfer">Eoin Colfer</a></span></div>
+
+
+										<div class="prices">99.400 ₫</div>
+										<div class="rootprice">142.000 ₫</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="clear"></div>
+
+							<div class="list_btn">
+
+								<a onclick="publishing(-1);" id="pprev" class="prev" href="javascript:"><i
+										class="fa fa-chevron-left"></i></a>
+
+								<a onclick="publishing(1);" id="pnext" class="next" href="javascript:"><i
+										class="fa fa-chevron-right"></i></a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+					<script>var page = 1; var count = 3; $("#pprev").addClass("disable"); if (count <= 1) $("#pnext").addClass("ndisable"); function publishing(step) { if ((page == 1 && step == -1) || (page == count && step == 1)) return; page = page + step; if (page < 1) { page = 1; } if (page == 1) { $("#pprev").addClass("disable"); } else { $("#pprev").removeClass("disable"); } if (page == count || page > count) { $("#pnext").addClass("ndisable"); } else { $("#pnext").removeClass("ndisable"); } address = '/home/publishing/index.html'; address = addQuery(address, 'page=' + page); $.ajax({ url: address, dataType: "html", type: "GET", cache: false, error: function (e) { Boxy.alert('Lỗi đb', null, { title: 'Lỗi' }); return false; }, success: function (data) { $("#ajaxcontainer").empty(); $("#ajaxcontainer").append(data); i = 0; if (step == 1) { $(".hide").each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } else { $($(".hide").get().reverse()).each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } return true; } }); }</script>
+
+				</div>
+				<div class="block" id="module_bestseller">
+
+					<h2>
+
+						<a class="title" href="/sach-ban-chay.html" title="Sách bán chạy">Sách bán chạy<span
+								class="b-main__category-arrow"></span></a>
+
+						<a class="more" href="/sach-ban-chay.html" title="Xem tất cả">Xem tất cả</a>
+
+					</h2>
+
+					<div class="blockcontent">
+
+						<div class="bestseller"
+							style="position:relative; padding:0 20px; overflow:hidden; height:340px">
+
+							<div id="bajaxcontainer">
+
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3563/quy-thoai-lien-thien-ban-dac-biet-.html"
+												title="Quỷ Thoại Liên Thiên ( bản đặc biệt)"><img
+													src="/web/css/Images/ImageBookh/bia__94105_thum_135.jpg"
+													alt="Quỷ Thoại Liên Thiên ( bản đặc biệt)"
+													title="Quỷ Thoại Liên Thiên ( bản đặc biệt)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3563/quy-thoai-lien-thien-ban-dac-biet-.html"
+												title="Quỷ Thoại Liên Thiên ( bản đặc biệt)">Quỷ Thoại Liên Thiên ( bản
+												đặc biệt)</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/131/thanh-khau.html"
+													title="Thanh Khâu">Thanh Khâu</a></span></div>
+
+
+										<div class="prices">215.200 ₫</div>
+										<div class="rootprice">269.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3568/ma-ton-cung-muon-biet-tap-2-ban-dac-biet-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)"><img
+													src="/web/css/Images/ImageBookh/pr-ngang__01691_thum_135.jpg"
+													alt="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)"
+													title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3568/ma-ton-cung-muon-biet-tap-2-ban-dac-biet-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản đặc biệt)">Ma Tôn Cũng Muốn
+												Biết - Tập 2 ( bản...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1450/thanh-sac-vu-duc.html"
+													title="Thanh Sắc Vũ Dực">Thanh Sắc Vũ Dực</a></span></div>
+
+
+										<div class="prices">207.200 ₫</div>
+										<div class="rootprice">259.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3564/quy-thoai-lien-thien-ban-thuong-.html"
+												title="Quỷ Thoại Liên Thiên ( bản thường)"><img
+													src="/web/css/Images/ImageBookt/bia__20227_thum_135.jpg"
+													alt="Quỷ Thoại Liên Thiên ( bản thường)"
+													title="Quỷ Thoại Liên Thiên ( bản thường)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3564/quy-thoai-lien-thien-ban-thuong-.html"
+												title="Quỷ Thoại Liên Thiên ( bản thường)">Quỷ Thoại Liên Thiên ( bản
+												thường)</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/131/thanh-khau.html"
+													title="Thanh Khâu">Thanh Khâu</a></span></div>
+
+
+										<div class="prices">159.200 ₫</div>
+										<div class="rootprice">199.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a
+												href="/3553/cao-thu-doi-trang-thay-den-tap-4-ban-thuong-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - tập 4 ( bản thường)"><img
+													src="/web/css/Images/ImageBookw/bia-mem_cao-thu-4__83077_thum_135.jpg"
+													alt="Cao Thủ Đổi Trắng Thay Đen - tập 4 ( bản thường)"
+													title="Cao Thủ Đổi Trắng Thay Đen - tập 4 ( bản thường)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3553/cao-thu-doi-trang-thay-den-tap-4-ban-thuong-.html"
+												title="Cao Thủ Đổi Trắng Thay Đen - tập 4 ( bản thường)">Cao Thủ Đổi
+												Trắng Thay Đen - tập 4 (...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1708/phong-thu-luu-ngoc.html"
+													title="Phong Thư Lưu Ngốc">Phong Thư Lưu Ngốc</a></span></div>
+
+
+										<div class="prices">127.200 ₫</div>
+										<div class="rootprice">159.000 ₫</div>
+									</div>
+								</div>
+								<div class="product_contener">
+									<div class="products">
+										<div class="image"><a href="/3569/ma-ton-cung-muon-biet-tap-2-ban-thuong-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)"><img
+													src="/web/css/Images/ImageBooko/bia1_ma-ton-cung-muon-biet-tap-2__16002_thum_135.jpg"
+													alt="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)"
+													title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)" /></a>
+											<span class="saleprice">-20%</span>
+										</div>
+										<div class="productname">
+											<a href="/3569/ma-ton-cung-muon-biet-tap-2-ban-thuong-.html"
+												title="Ma Tôn Cũng Muốn Biết - Tập 2 ( bản thường)">Ma Tôn Cũng Muốn
+												Biết - Tập 2 ( bản...</a>
+										</div>
+										<div class="fields"> <span><a href="/thuong-hieu/1450/thanh-sac-vu-duc.html"
+													title="Thanh Sắc Vũ Dực">Thanh Sắc Vũ Dực</a></span></div>
+
+
+										<div class="prices">135.200 ₫</div>
+										<div class="rootprice">169.000 ₫</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="clear"></div>
+
+							<div class="list_btn">
+
+								<a onclick="bestproduct(-1);" class="prev" id="bprev" href="javascript:"><i
+										class="fa fa-chevron-left"></i></a>
+
+								<a onclick="bestproduct(1);" class="next" id="bnext" href="javascript:"><i
+										class="fa fa-chevron-right"></i></a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+
+					<script>var pageb = 1; var countb = 4; $("#bprev").addClass("disable"); if (countb <= 1) $("#bnext").addClass("ndisable"); function bestproduct(step) { if ((pageb == 1 && step == -1) || (pageb == countb && step == 1)) return; pageb = pageb + step; if (pageb < 1) { pageb = 1; } if (pageb == 1) { $("#bprev").addClass("disable"); } else { $("#bprev").removeClass("disable"); } if (pageb == countb || pageb > countb) { $("#bnext").addClass("ndisable"); } else { $("#bnext").removeClass("ndisable"); } address = '/home/bestseller/index.html?datetime=7'; address = addQuery(address, 'page=' + pageb); $.ajax({ url: address, dataType: "html", type: "GET", cache: false, error: function (e) { Boxy.alert('Lỗi ajax', null, { title: 'Lỗi' }); return false; }, success: function (data) { $("#bajaxcontainer").empty(); $("#bajaxcontainer").append(data); i = 0; if (step == 1) { $(".hide").each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } else { $($(".hide").get().reverse()).each(function (index) { $(this).delay(50 * i).fadeIn(100); i++; }); } return true; } }); }</script>
+
+				</div>
+				<div class="block" id="module_topcategories">
+					<h2>
+						<a class="title" href="/products/tat-ca-chuyen-muc.html" title="Danh mục">Danh mục<span
+								class="b-main__category-arrow"></span></a>
+						<a class="more" href="/products/tat-ca-chuyen-muc.html" title="Xem tất cả">Xem tất cả</a>
+					</h2>
+					<div class="blockcontent">
+						<div style="position:relative; padding:0; overflow:hidden; margin-left:-4%">
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/1/sach-kinh-te.html" title=""><img
+												src="/web/css/Images/ImageBookm/sach-kinh-te__44040.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/1/sach-kinh-te.html" title="">Sách kinh tế</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/2/van-hoc-nuoc-ngoai.html" title=""><img
+												src="/web/css/Images/ImageBookc/mr-bu__06488.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/2/van-hoc-nuoc-ngoai.html" title="">Văn học nước ngoài</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/3/van-hoc-trong-nuoc.html" title=""><img
+												src="/web/css/Images/ImageBookp/du-xa-se-cu-du-la-se-quen__31174.jpg" alt=""
+												title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/3/van-hoc-trong-nuoc.html" title="">Văn học trong nước</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/4/sach-ki-nang-song.html" title=""><img
+												src="/web/css/Images/ImageBookz/ki-nang-song__84906.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/4/sach-ki-nang-song.html" title="">Sách kĩ năng sống</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/5/sach-tuoi-teen.html" title=""><img
+												src="/web/css/Images/ImageBookh/teen__26864.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/5/sach-tuoi-teen.html" title="">Sách tuổi teen</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/6/hoc-ngoai-ngu-tu-dien.html" title=""><img
+												src="/web/css/Images/ImageBookp/hoc-ngoai-ngu__61937.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/6/hoc-ngoai-ngu-tu-dien.html" title="">Học ngoại ngữ -
+											Từ...</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/7/sach-thieu-nhi.html" title=""><img
+												src="/web/css/Images/ImageBookw/sach-thieu-nhi__04040.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/7/sach-thieu-nhi.html" title="">Sách thiếu nhi</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/8/thuong-thuc-doi-song.html" title=""><img
+												src="/web/css/Images/ImageBookz/thuong-thuc-doi-song__72069.jpg" alt=""
+												title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/8/thuong-thuc-doi-song.html" title="">Thường thức đời
+											sống</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/9/sach-chuyen-nganh.html" title=""><img
+												src="/web/css/Images/ImageBookq/sach-chuyen-nganh__81172.jpg" alt=""
+												title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/9/sach-chuyen-nganh.html" title="">Sách chuyên ngành</a>
+									</div>
+								</div>
+							</div>
+							<div class="category_contener">
+								<div class="categories">
+									<div class="image"><a href="/danh-muc/51/van-phong-pham-qua-tang.html" title=""><img
+												src="/web/css/Images/ImageBooke/qua-tang__16149.jpg" alt="" title="" /></a>
+									</div>
+									<div class="catname">
+										<a href="/danh-muc/51/van-phong-pham-qua-tang.html" title="">Văn Phòng Phẩm -
+											Quà...</a>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="block " id="content_seohome">
+					<div class="blockcontent">
+						<h1>
+							<span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">Mua
+									S&aacute;ch Online Tại Nobita.Vn</span></span>
+						</h1>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:12px;">Ra đời
+									từ năm 2011, đến nay <strong>Nobita.vn</strong> đ&atilde; trở th&agrave;nh địa chỉ
+									<a href="http://nobita.vn/"><strong>mua s&aacute;ch online</strong></a> quen thuộc
+									của h&agrave;ng ng&agrave;n độc giả tr&ecirc;n cả nước. Với đầu s&aacute;ch phong
+									ph&uacute;, thuộc c&aacute;c thể loại: <strong><a
+											href="http://nobita.vn/danh-muc/2/van-hoc-nuoc-ngoai.html">Văn học nước
+											ngoại</a>, <a href="http://nobita.vn/danh-muc/3/van-hoc-trong-nuoc.html">Văn
+											học trong nước</a>, <a
+											href="http://nobita.vn/danh-muc/1/sach-kinh-te.html">Kinh tế</a>, <a
+											href="http://nobita.vn/danh-muc/4/sach-ki-nang-song.html">Kỹ năng sống</a>,
+										<a href="http://nobita.vn/danh-muc/7/sach-thieu-nhi.html">Thiếu nhi</a>, <a
+											href="http://nobita.vn/danh-muc/6/hoc-ngoai-ngu.html">S&aacute;ch học ngoại
+											ngữ</a>, <a
+											href="http://nobita.vn/danh-muc/9/sach-chuyen-nganh.html">S&aacute;ch
+											chuy&ecirc;n ng&agrave;nh</a></strong>,... được cập nhật li&ecirc;n tục từ
+									c&aacute;c nh&agrave; xuất bản uy t&iacute;n trong nước.&nbsp;</span></span>
+						</p>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span style="font-size:12px;">Khi mua
+									s&aacute;ch online tại Nobita.vn, Qu&yacute; kh&aacute;ch được <strong>Bọc plastic
+										miễn ph&iacute; đến 99%</strong> (trừ s&aacute;ch b&igrave;a cứng, s&aacute;ch
+									dạng hộp - dạng đặc biệt, s&aacute;ch khổ qu&aacute; to, ...)</span></span>
+						</p>
+						<p>
+							<span style="font-family:arial,helvetica,sans-serif;"><span
+									style="font-size:12px;">Ngo&agrave;i ra, với h&igrave;nh thức <strong>Giao
+										h&agrave;ng thu tiền tận nơi</strong> v&agrave; <strong>Đổi h&agrave;ng trong
+										v&ograve;ng 7 ng&agrave;y</strong> nếu s&aacute;ch c&oacute; bất kỳ lỗi
+									n&agrave;o trong qu&aacute; tr&igrave;nh in ấn sẽ gi&uacute;p Qu&yacute;
+									kh&aacute;ch y&ecirc;n t&acirc;m hơn khi mua sắm tại Nobita.vn</span></span>
+						</p>
+						<div>
+							&nbsp;</div>
+						<p style="text-align: center;">
+							&nbsp;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="footer">
+			<div id="container">
+				<div class="footer_menu">
+					<div class="block " id="menu_Footer">
+						<div class="blockcontent">
+							<ul>
+								<li class="group">Hỗ trợ khách hàng<ul>
+										<li class="group">Email: admin@nobita.vn<ul>
+												<li class="group">Hotline: <b>0938 424 289</b></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="group">Giới thiệu<ul>
+										<li><a href="/gioi-thieu-nobita.html" title="Về nobita" target="_self">Về
+												nobita</a></li>
+										<li><a href="/tuyen-dung.html" title="Tuyển dụng" target="_self">Tuyển dụng</a>
+										</li>
+									</ul>
+								</li>
+								<li class="group">Tài khoản<ul>
+										<li><a href="http://nobita.vn/users/login/index.html" title="Tài khoản"
+												target="_self">Tài khoản</a></li>
+										<li><a href="http://nobita.vn/users/login/index.html" title="Danh sách đơn hàng"
+												target="_self">Danh sách đơn hàng</a></li>
+										<li><a href="http://nobita.vn/users/login/index.html" title="Thông báo"
+												target="_self">Thông báo</a></li>
+									</ul>
+								</li>
+								<li class="group">Hướng dẫn<ul>
+										<li><a href="/huong-dan-mua-hang.html" title="Hướng dẫn mua hàng"
+												target="_self">Hướng dẫn mua hàng</a></li>
+										<li><a href="/phuong-thuc-thanh-toan.html" title="Phương thức thanh toán"
+												target="_self">Phương thức thanh toán</a></li>
+										<li><a href="/contents/danh-muc/2/cau-hoi-thuong-gap.html"
+												title="Câu hỏi thường gặp" target="_self">Câu hỏi thường gặp</a></li>
+										<li><a href="/phuong-thuc-van-chuyen.html" title="Phương thức vận chuyển"
+												target="_self">Phương thức vận chuyển</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="facebook">
+					<iframe
+						src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fnobita.vn&amp;width=300&amp;height=200&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+						scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:200px;"
+						allowTransparency="true"></iframe>
+				</div>
+				<div class="clear"></div>
+				<div class="footer_address">
+					<div class="block " id="content_FooterAddress">
+						<div class="blockcontent">
+							<div style="text-align: center;">
+								Copyright &copy; 2014 Nobita.vn</div>
+							<div style="text-align: center;">
+								&nbsp;</div>
+							<div style="text-align: center;">
+								Địa chỉ: 25/5 Thăng Long, P. 4, Quận T&acirc;n B&igrave;nh, TP. Hồ Ch&iacute; Minh</div>
+							<div style="text-align: center;">
+								&nbsp;</div>
+							<div style="text-align: center;">
+								<a href="http://online.gov.vn/Home/WebDetails/9908" target="_blank"><img alt=""
+										src="/stores/images/dathongbao-1.png" style="width: 220px; height: 83px;" /></a>
+							</div>
+							<div style="text-align: right;">
+								<a href="https://anhduyict.vn/">C&ocirc;ng ty lắp camera quan s&aacute;t </a>&nbsp;<a
+									href="https://anhduyict.vn/">Dịch vụ lắp camera quan s&aacute;t</a>&nbsp;&nbsp;<a
+									href="https://anhduyict.vn/">lắp b&aacute;o động chống trộm</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="homecoupon">
+				<div class="titlebar">
+					<div class="fleft">Nhiều ưu đãi hấp dẫn đang chờ bạn</div>
+					<div class="fright"><span onclick="showdialog(0)">-</span></div>
+					<div class="clear"></div>
+				</div>
+				<form action="/newsletters/submit/index.html" onsubmit="updateemail(this); return false;"
+					id="homecoupon">
+					<div align="center" style="margin:5px">
+						<input placeholder="Nhập email của bạn vào đây" type="email" value="" id="newemail"
+							class="homeemail" name="newemail" required="">
+					</div>
+					<div align="center" style="margin:5px">
+						<input type="submit" class="homesubmit" value="Đăng ký" name="subscribe" id="homesubmit">
+					</div>
+					<span id="help1"></span>
+					<input type="hidden" name="C1e20f658d37bab2d76648cc0b53d59c3" value="1" />
+				</form>
+			</div>
+			<div class="coupon">
+				<a href="javascript:" onclick="showdialog(1)">Ưu đãi</a>
+			</div>
+			<div id='bttop' class="bttop"><i class="fa fa-arrow-up"></i></div>
+			<script language="javascript"
+				type="text/javascript">$(function () { $(window).scroll(function () { if ($(this).scrollTop() != 0) { $('#bttop').fadeIn(); } else { $('#bttop').fadeOut(); } }); $('#bttop').click(function () { $('body,html').animate({ scrollTop: 0 }, 800); }); }); function showdialog(value) { if (value == 1) { $(".homecoupon").show(); } else { $(".homecoupon").hide(); } } function updateemail(obj) { address = obj.action; var formdata = $("#homecoupon").serialize(); $.ajax({ type: "POST", dataType: "html", url: address, data: formdata, cache: false, error: function (e) { Boxy.alert('Lỗi ajax', null, { title: 'Lỗi ajax' }); }, success: function (data) { if (data != '') { $("#help1").empty(); $("#help1").append(data); gde('newemail').value = ''; } } }); }; var previousScroll = 0; $(window).scroll(function () { var currentScroll = $(this).scrollTop(); if (currentScroll < previousScroll && currentScroll > 300) { if ($('.top_header').css('position') != 'fixed') { $('.top_header').css('position', 'fixed'); } } else { $('.top_header').css('position', 'inherit'); } previousScroll = currentScroll; }); (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-56977516-1', 'auto'); ga('send', 'pageview');</script>
+		</div>
+	</div>
+</body>
+</html>

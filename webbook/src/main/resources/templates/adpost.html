@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="htw.utp://wwltraq.net.nz/thymeleaf/layout">
+   <head>
+      <title >Admin</title>
+   </head>
+   <body>
+  
+     <h1>Wellcome</h1>
+      
+   <div th:each="book: ${oroderaccount}">
+      <div th:text="${book.tenKH}"></div>
+      <div th:text="${book.loginentities.name}"></div>
+      
+      <div></div>
+    </div>
+   </body>
+   
+</html>
